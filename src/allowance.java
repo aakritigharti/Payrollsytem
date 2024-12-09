@@ -357,7 +357,7 @@ public class allowance extends javax.swing.JFrame {
             jTextField2.setText(rs.getString("id"));
             jTextField3.setText(rs.getString("firstname"));
             jTextField4.setText(rs.getString("lastname"));
-            jTextField5.setText(rs.getString("dateofbirth"));
+            jTextField5.setText(rs.getString("dateofbirth22"));
             jTextField6.setText(rs.getString("salary"));
             jTextField7.setText(rs.getString("department"));
         } else {
