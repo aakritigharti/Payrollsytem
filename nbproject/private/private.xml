@@ -4,9 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Payroll%20Management/Payrollsytem/src/employee.java</file>
-            <file>file:/D:/Payroll%20Management/Payrollsytem/src/payrollsytem/Payrollsytem.java</file>
+            <file>file:/D:/Payroll%20Management/Payrollsytem/src/menu.java</file>
             <file>file:/D:/Payroll%20Management/Payrollsytem/src/login.java</file>
+            <file>file:/D:/Payroll%20Management/Payrollsytem/src/paymentslip.java</file>
+            <file>file:/D:/Payroll%20Management/Payrollsytem/src/allowance.java</file>
             <file>file:/D:/Payroll%20Management/Payrollsytem/src/deduction.java</file>
+            <file>file:/D:/Payroll%20Management/Payrollsytem/src/search.java</file>
+            <file>file:/D:/Payroll%20Management/Payrollsytem/src/updatesalary.java</file>
             <file>file:/D:/Payroll%20Management/Payrollsytem/src/db.java</file>
         </group>
     </open-files>

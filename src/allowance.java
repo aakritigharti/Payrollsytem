@@ -1,5 +1,11 @@
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -56,15 +62,21 @@ public class allowance extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Employee Id:");
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
 
         jLabel2.setText("Empoyee Id:");
 
@@ -121,11 +133,19 @@ public class allowance extends javax.swing.JFrame {
 
         jLabel14.setText("Total Amount:");
 
-        jTextField14.setText("0.00");
-
         jButton1.setText("Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Calculate");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Clear");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +161,8 @@ public class allowance extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setText("0.00");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,7 +173,7 @@ public class allowance extends javax.swing.JFrame {
                         .addGap(335, 335, 335)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,10 +295,10 @@ public class allowance extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,11 +321,120 @@ public class allowance extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
+        jTextField10.setText("");
+        jTextField11.setText("");
+        jTextField12.setText("");
+        jTextField1.setText("");
+        
+        
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         new menu().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+         PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    try {
+        String query = "SELECT * FROM empregister  WHERE id = ?";
+        ps = db.connect().prepareStatement(query);
+        ps.setString(1, jTextField1.getText());
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            jTextField2.setText(rs.getString("id"));
+            jTextField3.setText(rs.getString("firstname"));
+            jTextField4.setText(rs.getString("lastname"));
+            jTextField5.setText(rs.getString("dateofbirth"));
+            jTextField6.setText(rs.getString("salary"));
+            jTextField7.setText(rs.getString("department"));
+        } else {
+            JOptionPane.showMessageDialog(null, "No record found");
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error fetch TextField2ing employee details: " + ex.getMessage());
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error closing resources: " + ex.getMessage());
+        } 
+}                                       
+      
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                       PreparedStatement ps;
+                        String query = "INSERT INTO `allowance`(`allowance_id`, `first_name`, `last_name`, `total_allowance`, `Overtime`, `bonus`, `other`, `salary`, `rate`, `id`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        
+        try{
+                          // int value = Emp.id;
+                          ps = db.connect().prepareStatement(query);
+                           String value1 = jTextField2.getText();
+                           String value2 = jTextField3.getText();
+                           String value3 = jTextField4.getText();
+                           String value4 = jLabel12.getText();
+                           String value5 = jTextField8.getText();
+                           String value6 = jTextField9.getText();
+                           String value7 = jTextField10.getText();
+                           String value8 = jTextField6.getText();
+                           String value9 = jTextField12.getText();
+                           String value10 = jTextField2.getText();
+                           ps.execute();
+                           JOptionPane.showMessageDialog(null, "Allowance Added");
+                          
+                           
+                                   
+                       }          
+        catch(Exception ex){
+            
+        }
+              
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int salary = Integer.parseInt(jTextField6.getText());
+         int overtime = Integer.parseInt(jTextField8.getText());
+         
+         double eight = 8;
+          double days = 25; 
+          double dbop = 0; 
+          double overtimeRate = 1.5;
+          
+          double Total_Overtime = overtime *overtimeRate;
+          String x= String.valueOf(dbop);
+          jTextField8.setText(x);
+          
+          dbop= salary/ days/eight;
+          String s= String.valueOf(dbop);
+          jTextField12.setText(s);
+          
+          int bonus = Integer.parseInt(jTextField9.getText());
+          int other = Integer.parseInt(jTextField10.getText());
+          int c = bonus+other;
+          double calc =Total_Overtime* dbop+c;
+          String f =String.valueOf(calc);
+          jLabel12.setText(f);
+          
+          
+          
+          
+          
+          
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,6 +479,7 @@ public class allowance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -364,7 +496,6 @@ public class allowance extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
