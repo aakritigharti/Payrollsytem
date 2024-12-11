@@ -381,6 +381,11 @@ public class deduction extends javax.swing.JFrame {
                  ps.setString(3,jTextField3.getText());
                  ps.setString(4,jTextField7.getText());
                  ps.setString(5,jLabel14.getText());
+<<<<<<< HEAD
+                 ps.setString(6,jTextField.getText());
+                 
+=======
+>>>>>>> 840019697df1cea8f377ba0c252ea4c9bac10521
                  ps.executeUpdate();
                     JOptionPane.showMessageDialog(null, "Data is saved successfully");
             
