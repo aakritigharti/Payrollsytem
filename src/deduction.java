@@ -371,11 +371,12 @@ public class deduction extends javax.swing.JFrame {
             try{
                 String query="INSERT INTO `deductions`(`deduction_id`, `firstname`, `surname`, `salary`, `deduction_amount`, `emp_id`) VALUES (?,?,?,?,?,?)";
                  ps = db.connect().prepareStatement(query);
-                 ps.setString(1,jTextField2.getText());
-                 ps.setString(2,jTextField3.getText());
-                 ps.setString(3,jTextField7.getText());
-                 ps.setString(4,jLabel14.getText());
-                 ps.setString(5,jTextField.getText());
+                 ps.setString(1,jTextField.getText());
+                 ps.setString(2,jTextField2.getText());
+                 ps.setString(3,jTextField3.getText());
+                 ps.setString(4,jTextField7.getText());
+                 ps.setString(5,jLabel14.getText());
+                 ps.setString(6,jTextField.getText());
                  
                  ps.executeUpdate();
                     JOptionPane.showMessageDialog(null, "Data is saved successfully");
