@@ -185,7 +185,7 @@ jPopupMenu1.show(jButton6, jButton6.getWidth()/2  , jButton6.getHeight()/2  );
 
         
              try { 
-    Document document = new Document();
+    //Document document = new Document();
     
     String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
     PdfWriter.getInstance(document, new FileOutputStream(filePath));
