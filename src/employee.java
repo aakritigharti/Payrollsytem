@@ -321,7 +321,16 @@ public class employee extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+         jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
+        jTextField3.setText("");
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
