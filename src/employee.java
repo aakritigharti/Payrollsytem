@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 /**
  *
@@ -330,6 +331,7 @@ public class employee extends javax.swing.JFrame {
         jTextField8.setText("");
         jTextField9.setText("");
         jTextField3.setText("");
+         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -357,6 +359,7 @@ public class employee extends javax.swing.JFrame {
        String query = "INSERT INTO `empregister`( `id`, `firstname`, `lastname`, `dateofbirth`, `gender`, `contact`, `address`, `department`, `jobtitle`, `salary`) VALUES ( ?,?,?,?,?,?,?,?,?,?)";
        
         try {
+            
             ps = db.connect().prepareStatement(query);
             ps.setString(1,id );
             ps.setString(2,firstname );
