@@ -390,6 +390,8 @@ public class updatesalary extends javax.swing.JFrame {
         jTextField3.setText("");
         jTextField4.setText("");
         jTextField5.setText("");
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
         jTextField6.setText("");
         jTextField7.setText("");
         jTextField8.setText("");
