@@ -185,23 +185,24 @@ jPopupMenu1.show(jButton6, jButton6.getWidth()/2  , jButton6.getHeight()/2  );
 
         
              try { 
-    //Document document = new Document();
+    Document document = new Document();
     
-    String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    PdfWriter.getInstance(document, new FileOutputStream(filePath));
-    document.open();
-        document.add(new Paragraph(new Date().toString()));
-        document.add(new Paragraph("---------------------------------------------------------------------------"));
-        document.add(new Paragraph("id: John"));
-        document.add(new Paragraph("First Name: John"));
-        document.add(new Paragraph("Last Name: Doe"));
-        document.add(new Paragraph("Address: 123 Main Street, City, Country"));
-        document.add(new Paragraph("Date of Birth: John"));
-        document.add(new Paragraph("Gender: John"));
-        document.add(new Paragraph("Department: John"));
-        document.add(new Paragraph("Job Title: John"));
-        document.add(new Paragraph("Salary: John"));
-        document.add(new Paragraph("Contact: John"));
+   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+                 
+PdfWriter.getInstance(document, new FileOutputStream(filePath));
+ document.open();
+    document.add(new Paragraph(new Date().toString()));
+    document.add(new Paragraph("---------------------------------------------------------------------------"));
+    document.add(new Paragraph("id: John"));
+    document.add(new Paragraph("First Name: John"));
+    document.add(new Paragraph("Last Name: Doe"));
+    document.add(new Paragraph("Address: 123 Main Street, City, Country"));
+    document.add(new Paragraph("Date of Birth: John"));
+    document.add(new Paragraph("Gender: John"));
+    document.add(new Paragraph("Department: John"));
+    document.add(new Paragraph("Job Title: John"));
+    document.add(new Paragraph("Salary: John"));
+    document.add(new Paragraph("Contact: John")); 
     document.close();
     JOptionPane.showMessageDialog(null, "PDF created successfully!");
 } catch (Exception ex) {

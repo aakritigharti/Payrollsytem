@@ -197,7 +197,7 @@ public class employee extends javax.swing.JFrame {
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(436, 436, 436))
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                .addGap(404, 404, 404)
+                                .addGap(243, 243, 243)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
