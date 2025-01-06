@@ -1,4 +1,5 @@
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -406,7 +407,7 @@ public class allowance extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int salary = Integer.parseInt(jTextField6.getText());
+       /* int salary = Integer.parseInt(jTextField6.getText());
          int overtime = Integer.parseInt(jTextField8.getText());
          
          double eight = 8;
@@ -428,7 +429,7 @@ public class allowance extends javax.swing.JFrame {
           double calc =Total_Overtime* dbop+c;
           String f =String.valueOf(calc);
           jLabel12.setText(f);
-          
+          */
           
           
           

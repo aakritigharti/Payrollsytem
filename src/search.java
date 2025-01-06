@@ -400,6 +400,8 @@ public class search extends javax.swing.JFrame {
         jTextField3.setText("");
         jTextField5.setText("");
         jTextField6.setText("");
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
         jTextField7.setText("");
         jTextField8.setText("");
         jTextField9.setText("");

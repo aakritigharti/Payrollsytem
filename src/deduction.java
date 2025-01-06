@@ -382,7 +382,12 @@ public class deduction extends javax.swing.JFrame {
                  ps.setString(4,jTextField7.getText());
                  ps.setString(5,jLabel14.getText());
                  ps.setString(6,jTextField.getText());
+<<<<<<< HEAD
                 
+=======
+                 
+
+>>>>>>> 3b93d23d3eb71ba1b63ad7c314c6d867b5eadef6
                  ps.executeUpdate();
                     JOptionPane.showMessageDialog(null, "Data is saved successfully");
             
@@ -508,6 +513,25 @@ public class deduction extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        jTextField.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        r_percentage.setSelected(false);
+        r_amount.setSelected(false);
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        txt_deduction.setText("");
+        jLabel14.setText("0.00");
+        jLabel12.setText("0.00");
+        txt_percentage.setText("");
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

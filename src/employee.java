@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 /**
  *
@@ -42,7 +42,6 @@ public class employee extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -60,6 +59,7 @@ public class employee extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jTextField4 = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,12 +78,6 @@ public class employee extends javax.swing.JFrame {
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
             }
         });
 
@@ -212,11 +206,11 @@ public class employee extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
         jInternalFrame1Layout.setVerticalGroup(
@@ -248,9 +242,9 @@ public class employee extends javax.swing.JFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -324,9 +318,11 @@ public class employee extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          jTextField1.setText("");
         jTextField2.setText("");
-        jTextField4.setText("");
+        jTextField4.setDate(null);
         jTextField5.setText("");
         jTextField6.setText("");
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
         jTextField7.setText("");
         jTextField8.setText("");
         jTextField9.setText("");
@@ -343,7 +339,7 @@ public class employee extends javax.swing.JFrame {
        String id = jTextField1.getText();
        String firstname = jTextField2.getText();
        String lastname = jTextField3.getText();
-       String dateofbirth = jTextField4.getText();
+        Date dateofbirth = jTextField4.getDate();
        int gender = 0;
        if (jRadioButton1.isSelected()) {
     gender = 1;  
@@ -355,6 +351,7 @@ public class employee extends javax.swing.JFrame {
        String department = jTextField5.getText();
        String jobtitle = jTextField7.getText();
        String salary = jTextField6.getText();
+       java.sql.Date sqlDate = new java.sql.Date(dateofbirth.getTime());
        PreparedStatement ps;
        String query = "INSERT INTO `empregister`( `id`, `firstname`, `lastname`, `dateofbirth`, `gender`, `contact`, `address`, `department`, `jobtitle`, `salary`) VALUES ( ?,?,?,?,?,?,?,?,?,?)";
        
@@ -364,7 +361,7 @@ public class employee extends javax.swing.JFrame {
             ps.setString(1,id );
             ps.setString(2,firstname );
             ps.setString(3,lastname );
-            ps.setString(4,dateofbirth );
+            ps.setDate(4, sqlDate);
             ps.setInt(5, gender);
             ps.setString(6,contact );
             ps.setString(7,address);
@@ -380,10 +377,6 @@ public class employee extends javax.swing.JFrame {
         }
        
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
@@ -456,7 +449,7 @@ public class employee extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private com.toedter.calendar.JDateChooser jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
