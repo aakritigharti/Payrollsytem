@@ -371,35 +371,58 @@ public class deduction extends javax.swing.JFrame {
              ResultSet rs = null;
         int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?", "Add Record", JOptionPane.YES_NO_OPTION);
         if (p==0){
-           // String value3 = jLabel15.getText();
-           //String query="INSERT INTO `deducttion`(`id`, `firstname`, `lastname`, `salary`, `deductionamount`) VALUES (?,?,?,?,?)";
-            try{
-                String query="INSERT INTO `empregister`( `id`, `firstname`, `lastname`, `dateofbirth,  `department`, `jobtitle`, `salary`) VALUES ( ?,?,?,?,?,?)";
-                 ps = db.connect().prepareStatement(query);
-                 ps.setString(1,jTextField.getText());
-                 ps.setString(2,jTextField2.getText());
-                 ps.setString(3,jTextField3.getText());
-                 ps.setString(4,jTextField7.getText());
-                 ps.setString(5,jLabel14.getText());
-                 ps.setString(6,jTextField.getText());
-                 ps.executeUpdate();
-                    JOptionPane.showMessageDialog(null, "Data is saved successfully");
-            
-                    
+            try {
+    String updateDeductionQuery = "UPDATE deductions SET deduction_amount = deduction_amount + ? WHERE id = ? AND deduction_id = ?";
+    ps = db.connect().prepareStatement(updateDeductionQuery);
+    ps.setDouble(1, Double.parseDouble(jLabel14.getText())); // Add new deduction amount
+    ps.setInt(2, Integer.parseInt(jTextField.getText()));    // Employee ID
+    ps.setInt(3, Integer.parseInt(jTextField.getText()));    // Deduction ID
+    int rowsUpdated = ps.executeUpdate();
+
+    if (rowsUpdated == 0) {
+        String insertQuery = "INSERT INTO deductions (deduction_id, first_name, surname, salary, deduction_amount, id) VALUES (?, ?, ?, ?, ?, ?)";
+        ps = db.connect().prepareStatement(insertQuery);
+        ps.setInt(1, Integer.parseInt(jTextField.getText())); 
+        ps.setString(2, jTextField2.getText()); 
+        ps.setString(3, jTextField3.getText()); 
+        ps.setDouble(4, Double.parseDouble(jTextField7.getText())); 
+        ps.setDouble(5, Double.parseDouble(jLabel14.getText())); 
+        ps.setInt(6, Integer.parseInt(jTextField.getText())); 
+        ps.executeUpdate();
+    }
+
+    // Update the salary in `empregister`
+    String salaryQuery = "SELECT salary FROM empregister WHERE id = ?";
+    ps = db.connect().prepareStatement(salaryQuery);
+    ps.setInt(1, Integer.parseInt(jTextField.getText())); 
+    rs = ps.executeQuery();
+
+    if (rs.next()) {
+        double currentSalary = rs.getDouble("salary");
+        double deductionAmount = Double.parseDouble(jLabel14.getText()); 
+        double updatedSalary = currentSalary - deductionAmount;
+
+        String updateSalaryQuery = "UPDATE empregister SET salary = ? WHERE id = ?";
+        ps = db.connect().prepareStatement(updateSalaryQuery);
+        ps.setDouble(1, updatedSalary); 
+        ps.setInt(2, Integer.parseInt(jTextField.getText())); 
+        ps.executeUpdate();
+    }
+
+    JOptionPane.showMessageDialog(null, "Salary updated successfully!");
+
+} catch (SQLException ex) {
+    JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
+} finally {
+    try {
+        if (rs != null) rs.close();
+        if (ps != null) ps.close();
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error closing resources: " + ex.getMessage());
+    }
+}
+
         }
-            catch(SQLException ex)
-            {
-                 JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
-            }
-        finally {
-        try {
-            if (rs != null) rs.close();
-            if (ps != null) ps.close();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error closing resources: " + ex.getMessage());
-        } 
-} 
-        }      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKeyReleased
@@ -460,7 +483,7 @@ public class deduction extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         PreparedStatement ps = null;
+PreparedStatement ps = null;
         int salary = Integer.parseInt(jTextField7.getText()); 
             if(r_percentage.isSelected() == true ){ 
         int percent = Integer.parseInt(txt_deduction.getText());

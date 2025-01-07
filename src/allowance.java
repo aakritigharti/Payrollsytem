@@ -68,6 +68,8 @@ public class allowance extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,7 +134,7 @@ public class allowance extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel14.setText("Total Amount:");
+        jLabel14.setText("Calculated Amount:");
 
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -164,17 +166,16 @@ public class allowance extends javax.swing.JFrame {
 
         jLabel12.setText("0.00");
 
+        jLabel15.setText("Total Amount:");
+
+        jLabel16.setText("0.00");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(335, 335, 335)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,25 +188,18 @@ public class allowance extends javax.swing.JFrame {
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
                             .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(98, 98, 98)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(106, 106, 106)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField5)
-                                        .addComponent(jTextField6)
-                                        .addComponent(jTextField7)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField3)
-                                        .addComponent(jTextField4))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(186, 186, 186)
@@ -227,8 +221,29 @@ public class allowance extends javax.swing.JFrame {
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                                                 .addComponent(jTextField9)
-                                                .addComponent(jTextField10)))))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                                .addComponent(jTextField10)))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(98, 98, 98)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(106, 106, 106)
+                                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel15))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(11, 11, 11)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
@@ -299,7 +314,9 @@ public class allowance extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -378,36 +395,67 @@ public class allowance extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                       PreparedStatement ps;
-                        String query = "INSERT INTO `allowance`(`allowance_id`, `first_name`, `last_name`, `total_allowance`, `Overtime`, `bonus`, `other`, `salary`, `rate`, `id`) VALUES (?,?,?,?,?,?,?,?,?,?)";
-        
-        try{
-                          // int value = Emp.id;
-                          ps = db.connect().prepareStatement(query);
-                           String value1 = jTextField2.getText();
-                           String value2 = jTextField3.getText();
-                           String value3 = jTextField4.getText();
-                           String value4 = jLabel12.getText();
-                           String value5 = jTextField8.getText();
-                           String value6 = jTextField9.getText();
-                           String value7 = jTextField10.getText();
-                           String value8 = jTextField6.getText();
-                           String value9 = jTextField12.getText();
-                           String value10 = jTextField2.getText();
+                    PreparedStatement ps = null;
+                    ResultSet rs= null;
+                    int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?", "Add Record", JOptionPane.YES_NO_OPTION);
+                    if (p==0){
+                     try{   
+                        String updateallowanceQuery = "UPDATE allowance SET TotalAmount = TotalAmount + ? WHERE id = ? AND allowance_id = ?";
+    ps = db.connect().prepareStatement(updateallowanceQuery);
+    ps.setDouble(1, Double.parseDouble(jLabel12.getText())); 
+    ps.setInt(2, Integer.parseInt(jTextField2.getText()));    
+    ps.setInt(3, Integer.parseInt(jTextField2.getText()));    
+    int rowsUpdated = ps.executeUpdate();
+
+    if (rowsUpdated == 0) {
+                        String query = "INSERT INTO `allowance`(`allowance_id`, `first_name`, `last_name`, `salary`, `Department`, `Overtime`, `Bonus`, `Other`, `TotalOvertime`, `RatePerHour`, `Calculated amt`, `TotalAmount`, `id`)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                         
+                           ps = db.connect().prepareStatement(query);
+                           ps.setInt(1, Integer.parseInt(jTextField2.getText())); 
+                           ps.setString(2,jTextField3.getText());
+                           ps.setString(3,jTextField4.getText());
+                           ps.setDouble(4, Double.parseDouble(jTextField6.getText()));   
+                           ps.setString(5,jTextField7.getText());
+                           ps.setDouble(6, Double.parseDouble(jTextField8.getText())); 
+                           ps.setDouble(7, Double.parseDouble(jTextField9.getText())); 
+                           ps.setDouble(8, Double.parseDouble(jTextField10.getText())); 
+                           ps.setDouble(9, Double.parseDouble(jTextField11.getText()));
+                           ps.setDouble(10, Double.parseDouble(jTextField12.getText())); 
+                           ps.setDouble(11, Double.parseDouble(jLabel12.getText())); 
+                           ps.setDouble(12, Double.parseDouble(jLabel16.getText()));
+                           ps.setInt(13, Integer.parseInt(jTextField2.getText())); 
                            ps.execute();
-                           JOptionPane.showMessageDialog(null, "Allowance Added");
-                          
-                           
-                                   
-                       }          
-        catch(Exception ex){
-            
-        }
-              
+                               String salaryQuery = "SELECT salary FROM empregister WHERE id = ?";
+                               ps = db.connect().prepareStatement(salaryQuery);
+                               ps.setInt(1, Integer.parseInt(jTextField2.getText())); 
+                    if (rs.next()) {
+        double currentSalary = rs.getDouble("salary");
+        double allowanceAmount = Double.parseDouble(jLabel12.getText()); 
+        double updatedSalary = currentSalary - allowanceAmount;
+
+        String updateSalaryQuery = "UPDATE empregister SET salary = ? WHERE id = ?";
+        ps = db.connect().prepareStatement(updateSalaryQuery);
+        ps.setDouble(1, updatedSalary); 
+        ps.setInt(2, Integer.parseInt(jTextField2.getText())); 
+        ps.executeUpdate();
+    }
+
+    JOptionPane.showMessageDialog(null, "Salary updated successfully!");
+    }
+} catch (SQLException ex) {
+    JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
+} finally {
+    try {
+        if (rs != null) rs.close();
+        if (ps != null) ps.close();
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error closing resources: " + ex.getMessage());
+    }
+                     }}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       /* int salary = Integer.parseInt(jTextField6.getText());
+        int salary = Integer.parseInt(jTextField6.getText());
          int overtime = Integer.parseInt(jTextField8.getText());
          
          double eight = 8;
@@ -429,7 +477,7 @@ public class allowance extends javax.swing.JFrame {
           double calc =Total_Overtime* dbop+c;
           String f =String.valueOf(calc);
           jLabel12.setText(f);
-          */
+          
           
           
           
@@ -483,6 +531,8 @@ public class allowance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
