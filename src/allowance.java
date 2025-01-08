@@ -3,8 +3,6 @@
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -396,18 +394,21 @@ public class allowance extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                     PreparedStatement ps = null;
-                    ResultSet rs= null;
+                    ResultSet rs = null;
                     int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?", "Add Record", JOptionPane.YES_NO_OPTION);
                     if (p==0){
                      try{   
+                         System.out.println("Your message here");
+
                         String updateallowanceQuery = "UPDATE allowance SET TotalAmount = TotalAmount + ? WHERE id = ? AND allowance_id = ?";
-    ps = db.connect().prepareStatement(updateallowanceQuery);
-    ps.setDouble(1, Double.parseDouble(jLabel12.getText())); 
-    ps.setInt(2, Integer.parseInt(jTextField2.getText()));    
-    ps.setInt(3, Integer.parseInt(jTextField2.getText()));    
+                        ps = db.connect().prepareStatement(updateallowanceQuery);
+                        ps.setDouble(1, Double.parseDouble(jLabel16.getText())); 
+                        ps.setInt(2, Integer.parseInt(jTextField2.getText()));    
+                        ps.setInt(3, Integer.parseInt(jTextField2.getText()));    
     int rowsUpdated = ps.executeUpdate();
 
     if (rowsUpdated == 0) {
+        
                         String query = "INSERT INTO `allowance`(`allowance_id`, `first_name`, `last_name`, `salary`, `Department`, `Overtime`, `Bonus`, `Other`, `TotalOvertime`, `RatePerHour`, `Calculated amt`, `TotalAmount`, `id`)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
                          
                            ps = db.connect().prepareStatement(query);
@@ -425,13 +426,15 @@ public class allowance extends javax.swing.JFrame {
                            ps.setDouble(12, Double.parseDouble(jLabel16.getText()));
                            ps.setInt(13, Integer.parseInt(jTextField2.getText())); 
                            ps.execute();
+                          }
                                String salaryQuery = "SELECT salary FROM empregister WHERE id = ?";
                                ps = db.connect().prepareStatement(salaryQuery);
                                ps.setInt(1, Integer.parseInt(jTextField2.getText())); 
+                               rs = ps.executeQuery();
                     if (rs.next()) {
         double currentSalary = rs.getDouble("salary");
-        double allowanceAmount = Double.parseDouble(jLabel12.getText()); 
-        double updatedSalary = currentSalary - allowanceAmount;
+        double allowanceAmount = Double.parseDouble(jLabel16.getText()); 
+        double updatedSalary = currentSalary + allowanceAmount;
 
         String updateSalaryQuery = "UPDATE empregister SET salary = ? WHERE id = ?";
         ps = db.connect().prepareStatement(updateSalaryQuery);
@@ -442,7 +445,7 @@ public class allowance extends javax.swing.JFrame {
 
     JOptionPane.showMessageDialog(null, "Salary updated successfully!");
     }
-} catch (SQLException ex) {
+ catch (SQLException ex) {
     JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
 } finally {
     try {
@@ -451,7 +454,8 @@ public class allowance extends javax.swing.JFrame {
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Error closing resources: " + ex.getMessage());
     }
-                     }}
+                     }
+}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -464,8 +468,8 @@ public class allowance extends javax.swing.JFrame {
           double overtimeRate = 1.5;
           
           double Total_Overtime = overtime *overtimeRate;
-          String x= String.valueOf(dbop);
-          jTextField8.setText(x);
+          String x= String.valueOf(Total_Overtime);
+          jTextField11.setText(x);
           
           dbop= salary/ days/eight;
           String s= String.valueOf(dbop);
@@ -478,6 +482,9 @@ public class allowance extends javax.swing.JFrame {
           String f =String.valueOf(calc);
           jLabel12.setText(f);
           
+          double cal = calc + salary;
+          String g = String.valueOf(cal);
+          jLabel16.setText(g);
           
           
           
