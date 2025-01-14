@@ -26,9 +26,10 @@ public class employee extends javax.swing.JFrame {
     public employee() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        initializeForm();
     }
 
-  public class UniqueIDGenerator { 
+  /*public class UniqueIDGenerator { 
     private static long previousTimeMillis = System.currentTimeMillis();
     
     public static synchronized long generateUniqueID() 
@@ -40,13 +41,32 @@ public class employee extends javax.swing.JFrame {
 Random random = new Random(); 
 return currentTimeMillis * 1000 + random.nextInt(999); 
 }
-}
+}*/
   private void initializeForm() {
-   long uniqueID = UniqueIDGenerator.generateUniqueID(); 
+      try{
+   long uniqueID = getNextId();
  if (jTextField1 != null) { 
-     jTextField1.setText(String.valueOf(uniqueID)); 
- } 
-  }
+     jTextField1.setText(String.valueOf(uniqueID));
+}
+ } catch (SQLException ex) { 
+         JOptionPane.showMessageDialog( null,"SQL error: " + ex.getMessage()); 
+} 
+}
+
+private long getNextId() throws SQLException { 
+long nextId = 1; 
+String query = "SELECT MAX(id) AS max_id FROM empregister"; 
+try (
+  PreparedStatement ps = db.connect().prepareStatement(query); 
+ResultSet rs = ps.executeQuery()) 
+{ 
+if (rs.next()) {
+nextId = rs.getLong("max_id") + 1; } } 
+return nextId; 
+} 
+
+ 
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -379,8 +399,7 @@ return currentTimeMillis * 1000 + random.nextInt(999);
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        ResultSet rs; 
-       long uniqueID = UniqueIDGenerator.generateUniqueID();
-       jTextField1.setText(String.valueOf(uniqueID));
+       long uniqueID = Long.parseLong(jTextField1.getText());
       /*  if (jTextField1 != null) {
             jTextField1.setText(String.valueOf(uniqueID));
          System.out.println("ID set in JTextField: " + jTextField1.getText()); 
