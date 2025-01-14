@@ -223,19 +223,28 @@ public class paymentslip extends javax.swing.JFrame {
             String val3 = txt_dob.getText();
              String val4 = txt_department.getText();
               String val5 = txt_jobtitle.getText();
-               String salary = txt_salary.getText();
-         
-        
-        ;
+               String salary = txt_salary.getText();        
     PreparedStatement ps = null;
     ResultSet rs = null;
           try {
+                  String salaryQuery = "SELECT salary FROM empregister WHERE id = ?";
+    ps = db.connect().prepareStatement(salaryQuery);
+    ps.setString(1, val1); // Set the employee ID
+    rs = ps.executeQuery();
+
+    float basicSalary = 0; // Initialize basicSalary
+    if (rs.next()) {
+        basicSalary = rs.getFloat("salary"); // Get basic salary from empregister table
+    }
+    rs.close();
+    ps.close();  
+              
             String deductionQuery = "SELECT * FROM deductions WHERE id = ?";
     ps = db.connect().prepareStatement(deductionQuery);
     ps.setString(1, val1); // Set the employee ID
     rs = ps.executeQuery();
 
-    String deductionAmount = null; // Initialize deductionAmount
+    String deductionAmount = "0"; // Initialize deductionAmount
     if (rs.next()) {
         deductionAmount = rs.getString("deduction_amount"); // Adjust column name
     }
@@ -248,7 +257,7 @@ public class paymentslip extends javax.swing.JFrame {
     ps.setString(1, val1); // Set the employee ID
     rs = ps.executeQuery();
 
-    String overtime = null, bonus = null, otherAllowance = null, totalAmount = null; // Initialize variables
+    String overtime = "0", bonus = "0", otherAllowance = "0", totalAmount = "0"; // Initialize variables
     if (rs.next()) {
         overtime = rs.getString("Overtime"); // Adjust column name
         bonus = rs.getString("Bonus"); // Adjust column name
@@ -260,16 +269,22 @@ public class paymentslip extends javax.swing.JFrame {
    
     // Calculate total payment
    // Calculate total payment
-float basicSalary = Float.parseFloat(salary); // Handle decimal input
+//float basicSalary = Float.parseFloat(salary); // Handle decimal input
 float totalEarnings = Float.parseFloat(totalAmount); // Handle decimal input
 float totalDeductions = Float.parseFloat(deductionAmount); // Handle decimal input
 float netPay = basicSalary + totalEarnings - totalDeductions;
 
+    /*String allowanceQuery = "SELECT * FROM empregister WHERE id = ?";
+    ps = db.connect().prepareStatement(allowanceQuery);
+    ps.setString(1, val1); // Set the employee ID
+    rs = ps.executeQuery();
+ rs.close();
+ ps.close();*/
 
             // Create a Document object to generate PDF
             Document document = new Document();
-      String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/Payment Slip.pdf";  
-
+      //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/Payment Slip.pdf";  
+      String filePath = "D:\\a/Payment Slip.pdf";
             PdfWriter.getInstance(document, new FileOutputStream(filePath));
             document.open();
 
@@ -282,36 +297,36 @@ float netPay = basicSalary + totalEarnings - totalDeductions;
     document.add(new Paragraph(" "));
 
     // Add bill details in a structured format
-    myDocument.add(new Paragraph("PAY SLIP", FontFactory.getFont(FontFactory.TIMES_BOLD, 20, Font.BOLD)));
-myDocument.add(new Paragraph(new Date().toString()));
-myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
+    document.add(new Paragraph("PAY SLIP", FontFactory.getFont(FontFactory.TIMES_BOLD, 20, Font.BOLD)));
+document.add(new Paragraph(new Date().toString()));
+document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
 // Employee Details
-myDocument.add(new Paragraph("EMPLOYEE DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
-myDocument.add(new Paragraph("Name of Employee: " + val2 + " " + lastname, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("jobtitle: " + val5, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("Department: " + val4, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
+document.add(new Paragraph("EMPLOYEE DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
+document.add(new Paragraph("Name of Employee: " + val2 + " " + lastname, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("jobtitle: " + val5, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Department: " + val4, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
 // Salary Details
-myDocument.add(new Paragraph("SALARY DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
-myDocument.add(new Paragraph("Basic Salary: $" + basicSalary, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("Overtime: " + overtime + " Hours", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("Bonus: $" + bonus, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("Other Allowances: $" + otherAllowance, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
+document.add(new Paragraph("SALARY DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
+document.add(new Paragraph("Basic Salary: rs " + salary, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Overtime: " + overtime + " Hours", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Bonus: rs " + bonus, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Other Allowances: rs " + otherAllowance, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
 // Deduction Details
-myDocument.add(new Paragraph("DEDUCTION DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
+document.add(new Paragraph("DEDUCTION DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
 
-myDocument.add(new Paragraph("Total Deductions: $" + deductionAmount, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
+document.add(new Paragraph("Total Deductions: rs" + deductionAmount, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
 // Total Payment Details
-myDocument.add(new Paragraph("TOTAL PAYMENT DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
-myDocument.add(new Paragraph("Total Earnings: $" + totalEarnings, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("Net Pay: $" + String.format("%.2f", netPay), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
+document.add(new Paragraph("TOTAL PAYMENT DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
+document.add(new Paragraph("Total Earnings: rs " + totalEarnings, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Net Pay: rs " + String.format("%.2f", netPay), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
 
             // Close the document
@@ -396,8 +411,7 @@ myDocument.add(new Paragraph("--------------------------------------------------
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-             paymentslip np = new paymentslip();
-                np.setVisible(true);
+             new paymentslip().setVisible(true);
             }
         });
     }
