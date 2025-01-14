@@ -8,7 +8,10 @@ import javax.swing.JFrame;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
+import java.util.Random;
+import java.sql.Statement;
 import java.util.logging.Logger;
+import java.sql.ResultSet;
 import java.util.Date;
 import javax.swing.JOptionPane;
 /**
@@ -24,6 +27,26 @@ public class employee extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
+
+  public class UniqueIDGenerator { 
+    private static long previousTimeMillis = System.currentTimeMillis();
+    
+    public static synchronized long generateUniqueID() 
+    { 
+        long currentTimeMillis = System.currentTimeMillis();
+    
+    if (currentTimeMillis == previousTimeMillis) 
+    { currentTimeMillis++; } previousTimeMillis = currentTimeMillis;  
+Random random = new Random(); 
+return currentTimeMillis * 1000 + random.nextInt(999); 
+}
+}
+  private void initializeForm() {
+   long uniqueID = UniqueIDGenerator.generateUniqueID(); 
+ if (jTextField1 != null) { 
+     jTextField1.setText(String.valueOf(uniqueID)); 
+ } 
+  }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -347,13 +370,23 @@ public class employee extends javax.swing.JFrame {
          
         
     }//GEN-LAST:event_jButton2ActionPerformed
-
+  
+ 
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
      new menu().setVisible(true);        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String id = jTextField1.getText();
+       ResultSet rs; 
+       long uniqueID = UniqueIDGenerator.generateUniqueID();
+       jTextField1.setText(String.valueOf(uniqueID));
+      /*  if (jTextField1 != null) {
+            jTextField1.setText(String.valueOf(uniqueID));
+         System.out.println("ID set in JTextField: " + jTextField1.getText()); 
+} else { 
+System.out.println("jTextField1 is null!");  
+}*/
        String firstname = jTextField2.getText();
        String lastname = jTextField3.getText();
         Date dateofbirth = jTextField4.getDate();
@@ -375,7 +408,7 @@ public class employee extends javax.swing.JFrame {
         try {
             
             ps = db.connect().prepareStatement(query);
-            ps.setString(1,id );
+            ps.setLong(1, uniqueID);
             ps.setString(2,firstname );
             ps.setString(3,lastname );
             ps.setDate(4, sqlDate);
@@ -385,9 +418,16 @@ public class employee extends javax.swing.JFrame {
             ps.setString(8,department );
             ps.setString(9,jobtitle );
             ps.setString(10,salary );
-            if (ps.executeUpdate() > 0)
-            {
-                JOptionPane.showMessageDialog(null, "New User Added");
+            int affectedRows = ps.executeUpdate();
+            if (affectedRows > 0) { 
+             try (ResultSet generatedKeys = ps.getGeneratedKeys()) { 
+                 if (generatedKeys.next()) { 
+                     long generatedId = generatedKeys.getLong(1); 
+                     JOptionPane.showMessageDialog(null, "New User Added with ID: " + generatedId); } 
+                 else { 
+                    throw new SQLException("Inserting user failed, no ID obtained."); 
+                 } 
+             } 
             }
         } catch (SQLException ex) {
             Logger.getLogger(employee.class.getName()).log(Level.SEVERE, null, ex);

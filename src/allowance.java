@@ -72,6 +72,11 @@ public class allowance extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
         jLabel1.setText("Employee ID:");
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextField1KeyReleased(evt);
@@ -364,8 +369,10 @@ public class allowance extends javax.swing.JFrame {
             jTextField5.setText(rs.getString("dateofbirth"));
             jTextField6.setText(rs.getString("salary"));
             jTextField7.setText(rs.getString("department"));
+            
         } else {
             JOptionPane.showMessageDialog(null, "No record found");
+            
         }
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Error fetch TextField2ing employee details: " + ex.getMessage());
@@ -386,7 +393,6 @@ public class allowance extends javax.swing.JFrame {
                     int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?", "Add Record", JOptionPane.YES_NO_OPTION);
                     if (p==0){
                      try{   
-                         System.out.println("Your message here");
 
                         String updateallowanceQuery = "UPDATE allowance SET TotalAmount = TotalAmount + ? WHERE id = ? AND allowance_id = ?";
                         ps = db.connect().prepareStatement(updateallowanceQuery);
@@ -479,6 +485,10 @@ public class allowance extends javax.swing.JFrame {
           
           
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

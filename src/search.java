@@ -173,6 +173,11 @@ public class search extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jButton2.setText("Delete Record");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton3.setText("Clear");
@@ -371,6 +376,35 @@ public class search extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         PreparedStatement ps = null ;
+         try{
+         String updateempregisterQuery = "UPDATE empregister SET firstname = ?,lastname =?,dateofbirth = ?,gender =?,contact =?,address = ?,department=?,jobtitle=?,salary= ? WHERE id = ? ";
+                        ps = db.connect().prepareStatement(updateempregisterQuery);
+                        ps.setString(1, jTextField3.getText()); 
+                        ps.setString(2, jTextField4.getText()); 
+                        ps.setDate(3, java.sql.Date.valueOf(jTextField5.getText())); 
+                        String gender;
+                        if (jRadioButton1.isSelected()) {
+                         gender = "1"; } 
+                        else if (jRadioButton2.isSelected()) 
+                        { gender = "0";}
+                          else { 
+                        gender = ""; 
+                       } ps.setString(4, gender);
+                        ps.setInt(5, Integer.parseInt(jTextField7.getText())); 
+                        ps.setString(6, jTextField8.getText()); 
+                        ps.setString(7, jTextField9.getText()); 
+                        ps.setString(8, jTextField10.getText()); 
+                        ps.setInt(9, Integer.parseInt(jTextField6.getText())); 
+                        ps.setInt(10, Integer.parseInt(jTextField2.getText()));
+                ps.executeUpdate();
+             JOptionPane.showMessageDialog(null, " Updated successfully!");
+         }
+         catch (SQLException ex){
+              JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
+         }
+         /**/
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -447,6 +481,52 @@ public class search extends javax.swing.JFrame {
           jRadioButton2.setSelected(true);
         jRadioButton1.setSelected(false);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+                 PreparedStatement ps = null ;
+                    int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to delete record?", "Delete Record", JOptionPane.YES_NO_OPTION);
+                    if (p==0){
+         try{
+                      String updateallowanceQuery = "DELETE FROM allowance WHERE id = ? ";
+                        ps = db.connect().prepareStatement(updateallowanceQuery);
+                        ps.setInt(1, Integer.parseInt(jTextField2.getText()));
+                ps.executeUpdate();
+                         String updatededQuery = "DELETE FROM deductions WHERE id = ? ";
+                        ps = db.connect().prepareStatement(updatededQuery);
+                        ps.setInt(1, Integer.parseInt(jTextField2.getText()));
+                ps.executeUpdate();
+         String updateempregisterQuery = "DELETE FROM empregister WHERE id = ? ";
+                        ps = db.connect().prepareStatement(updateempregisterQuery);
+                        ps.setInt(1, Integer.parseInt(jTextField2.getText()));
+                ps.executeUpdate();
+             JOptionPane.showMessageDialog(null, " Deleted successfully!");
+                     jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField4.setText("");
+        jTextField3.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
+        jTextField10.setText("");
+         }
+         catch (SQLException ex){
+              JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
+         }finally { 
+                 if (ps != null) { 
+                 try { ps.close(); } 
+                 catch (SQLException e) 
+                 {
+                 e.printStackTrace(); 
+                 } 
+                 } 
+                 }
+                    }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
