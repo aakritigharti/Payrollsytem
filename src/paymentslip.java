@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
+import java.util.Date;
 import javax.swing.*;
 
 
@@ -193,13 +194,13 @@ public class paymentslip extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_dob, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(46, 46, 46)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addContainerGap(288, Short.MAX_VALUE))
         );
 
         pack();
@@ -223,9 +224,47 @@ public class paymentslip extends javax.swing.JFrame {
              String val4 = txt_department.getText();
               String val5 = txt_jobtitle.getText();
                String salary = txt_salary.getText();
-          try {
-            // Get data from text fields
+         
         
+        ;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+          try {
+            String deductionQuery = "SELECT * FROM deductions WHERE id = ?";
+    ps = db.connect().prepareStatement(deductionQuery);
+    ps.setString(1, val1); // Set the employee ID
+    rs = ps.executeQuery();
+
+    String deductionAmount = null; // Initialize deductionAmount
+    if (rs.next()) {
+        deductionAmount = rs.getString("deduction_amount"); // Adjust column name
+    }
+    rs.close();
+    ps.close();
+
+    // Fetch allowances from the database
+    String allowanceQuery = "SELECT * FROM allowance WHERE id = ?";
+    ps = db.connect().prepareStatement(allowanceQuery);
+    ps.setString(1, val1); // Set the employee ID
+    rs = ps.executeQuery();
+
+    String overtime = null, bonus = null, otherAllowance = null, totalAmount = null; // Initialize variables
+    if (rs.next()) {
+        overtime = rs.getString("Overtime"); // Adjust column name
+        bonus = rs.getString("Bonus"); // Adjust column name
+        otherAllowance = rs.getString("Other"); // Adjust column name
+        totalAmount = rs.getString("TotalAmount");
+    }
+    rs.close();
+    ps.close();
+   
+    // Calculate total payment
+   // Calculate total payment
+float basicSalary = Float.parseFloat(salary); // Handle decimal input
+float totalEarnings = Float.parseFloat(totalAmount); // Handle decimal input
+float totalDeductions = Float.parseFloat(deductionAmount); // Handle decimal input
+float netPay = basicSalary + totalEarnings - totalDeductions;
+
 
             // Create a Document object to generate PDF
             Document document = new Document();
@@ -234,53 +273,47 @@ public class paymentslip extends javax.swing.JFrame {
             PdfWriter.getInstance(document, new FileOutputStream(filePath));
             document.open();
 
-            // Add content to the document
-            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16);
-            Paragraph title = new Paragraph("Employee Payment Slip", titleFont);
-            title.setAlignment(Element.ALIGN_CENTER);
-            document.add(title);
+         Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16);
+    Paragraph title = new Paragraph("Employee Payment Slip", titleFont);
+    title.setAlignment(Element.ALIGN_CENTER);
+    document.add(title);
 
-            // Add a blank line
-            document.add(new Paragraph(" "));
+    // Add a blank line
+    document.add(new Paragraph(" "));
 
-            // Create a table with 2 columns
-            PdfPTable table = new PdfPTable(2);
-            table.setWidthPercentage(100); // Set table width to 100% of the page
-            table.setSpacingBefore(10f); // Space before table
-            table.setSpacingAfter(10f); // Space after table
+    // Add bill details in a structured format
+    myDocument.add(new Paragraph("PAY SLIP", FontFactory.getFont(FontFactory.TIMES_BOLD, 20, Font.BOLD)));
+myDocument.add(new Paragraph(new Date().toString()));
+myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
-            // Set column widths
-            float[] columnWidths = {2f, 5f};
-            table.setWidths(columnWidths);
+// Employee Details
+myDocument.add(new Paragraph("EMPLOYEE DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
+myDocument.add(new Paragraph("Name of Employee: " + val2 + " " + lastname, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("jobtitle: " + val5, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("Department: " + val4, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
-            // Add table header
-            PdfPCell header1 = new PdfPCell(new Phrase("Field"));
-            PdfPCell header2 = new PdfPCell(new Phrase("Details"));
-            header1.setHorizontalAlignment(Element.ALIGN_CENTER);
-            header2.setHorizontalAlignment(Element.ALIGN_CENTER);
-            header1.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            header2.setBackgroundColor(BaseColor.LIGHT_GRAY);
-            table.addCell(header1);
-            table.addCell(header2);
+// Salary Details
+myDocument.add(new Paragraph("SALARY DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
+myDocument.add(new Paragraph("Basic Salary: $" + basicSalary, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("Overtime: " + overtime + " Hours", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("Bonus: $" + bonus, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("Other Allowances: $" + otherAllowance, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
-            // Add table rows
-            table.addCell("Employee ID");
-            table.addCell(val1);
-            table.addCell("First Name");
-            table.addCell(val2);
-            table.addCell("Last Name");
-            table.addCell(lastname);
-            table.addCell("Date of Birth");
-            table.addCell(val3);
-            table.addCell("Department");
-            table.addCell(val4);
-            table.addCell("Job Title");
-            table.addCell(val5);
-            table.addCell("Salary");
-            table.addCell(salary);
+// Deduction Details
+myDocument.add(new Paragraph("DEDUCTION DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
 
-            // Add table to the document
-            document.add(table);
+myDocument.add(new Paragraph("Total Deductions: $" + deductionAmount, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
+
+// Total Payment Details
+myDocument.add(new Paragraph("TOTAL PAYMENT DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
+myDocument.add(new Paragraph("Total Earnings: $" + totalEarnings, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("Net Pay: $" + String.format("%.2f", netPay), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+myDocument.add(new Paragraph("-------------------------------------------------------------------------------------------"));
+
+
             // Close the document
             document.close();
 
