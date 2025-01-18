@@ -63,10 +63,10 @@ public class paymentslip extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel1.setText("Employee ID:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(253, 75, 131, 30);
+        jLabel1.setBounds(250, 80, 131, 30);
 
         txt_id.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -74,47 +74,47 @@ public class paymentslip extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_id);
-        txt_id.setBounds(390, 72, 200, 38);
+        txt_id.setBounds(390, 72, 220, 40);
 
-        jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel2.setText("First Name:");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(253, 158, 117, 36);
 
-        jLabel3.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel3.setText("Last Name:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(253, 238, 94, 38);
+        jLabel3.setBounds(253, 238, 110, 38);
         getContentPane().add(txt_firstname);
-        txt_firstname.setBounds(390, 155, 200, 36);
+        txt_firstname.setBounds(390, 155, 220, 40);
         getContentPane().add(txt_lastname);
-        txt_lastname.setBounds(390, 235, 200, 38);
+        txt_lastname.setBounds(390, 235, 220, 38);
 
-        jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel4.setText("Date of Birth:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(253, 314, 118, 33);
+        jLabel4.setBounds(250, 320, 130, 33);
         getContentPane().add(txt_dob);
-        txt_dob.setBounds(389, 314, 200, 39);
+        txt_dob.setBounds(390, 310, 220, 39);
 
-        jLabel5.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel5.setText("Department:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(890, 79, 91, 30);
+        jLabel5.setBounds(851, 79, 130, 30);
         getContentPane().add(txt_department);
-        txt_department.setBounds(1011, 72, 200, 38);
+        txt_department.setBounds(1011, 72, 210, 40);
 
-        jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel6.setText("Job Title:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(890, 161, 77, 31);
+        jLabel6.setBounds(857, 161, 110, 31);
         getContentPane().add(txt_jobtitle);
-        txt_jobtitle.setBounds(1011, 154, 200, 39);
+        txt_jobtitle.setBounds(1011, 154, 210, 40);
 
-        jLabel7.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel7.setText("Basic Salary:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(888, 238, 105, 38);
+        jLabel7.setBounds(853, 238, 140, 38);
 
         txt_salary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,10 +122,10 @@ public class paymentslip extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_salary);
-        txt_salary.setBounds(1011, 235, 200, 38);
+        txt_salary.setBounds(1011, 235, 210, 38);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Generate Slip");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -134,10 +134,10 @@ public class paymentslip extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(576, 418, 160, 62);
+        jButton1.setBounds(550, 422, 210, 60);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -146,10 +146,10 @@ public class paymentslip extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(707, 526, 100, 45);
+        jButton2.setBounds(760, 520, 120, 50);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Clear");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -158,14 +158,13 @@ public class paymentslip extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(879, 418, 114, 62);
+        jButton3.setBounds(870, 420, 130, 62);
 
         jLabel8.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5.jpg"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(760, 90, 830, 860);
+        jLabel8.setBounds(1060, 280, 830, 860);
 
-        jLabel9.setBackground(new java.awt.Color(204, 204, 255));
         jLabel9.setOpaque(true);
         getContentPane().add(jLabel9);
         jLabel9.setBounds(0, 0, 1540, 860);

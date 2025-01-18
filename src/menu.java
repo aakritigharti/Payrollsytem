@@ -60,8 +60,8 @@ public class menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Allowance");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,10 +70,10 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(720, 170, 175, 39);
+        jButton1.setBounds(440, 80, 310, 60);
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(51, 51, 51));
+        jButton2.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Update Salary");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -82,10 +82,10 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(1100, 70, 238, 39);
+        jButton2.setBounds(850, 80, 340, 60);
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(51, 51, 51));
+        jButton3.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Deduction");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -94,10 +94,10 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(710, 290, 175, 39);
+        jButton3.setBounds(35, 690, 220, 60);
 
-        jButton4.setBackground(new java.awt.Color(102, 102, 102));
-        jButton4.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(51, 51, 51));
+        jButton4.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Payment slip");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -106,10 +106,10 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(710, 420, 175, 39);
+        jButton4.setBounds(420, 690, 240, 60);
 
-        jButton5.setBackground(new java.awt.Color(102, 102, 102));
-        jButton5.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(51, 51, 51));
+        jButton5.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Search");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -118,10 +118,10 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(1150, 290, 175, 39);
+        jButton5.setBounds(1275, 79, 220, 60);
 
-        jButton6.setBackground(new java.awt.Color(102, 102, 102));
-        jButton6.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton6.setBackground(new java.awt.Color(51, 51, 51));
+        jButton6.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Report");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -130,17 +130,17 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(1140, 170, 175, 39);
+        jButton6.setBounds(830, 690, 240, 60);
 
-        jButton7.setBackground(new java.awt.Color(102, 102, 102));
-        jButton7.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton7.setBackground(new java.awt.Color(51, 51, 51));
+        jButton7.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("About");
         getContentPane().add(jButton7);
-        jButton7.setBounds(1160, 410, 175, 39);
+        jButton7.setBounds(1240, 690, 240, 60);
 
-        jButton9.setBackground(new java.awt.Color(102, 102, 102));
-        jButton9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton9.setBackground(new java.awt.Color(51, 51, 51));
+        jButton9.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Employee Registration");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -149,10 +149,10 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(690, 70, 250, 39);
+        jButton9.setBounds(20, 80, 310, 60);
 
         jButton8.setBackground(new java.awt.Color(51, 51, 51));
-        jButton8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Logout");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -161,14 +161,14 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(1240, 610, 100, 40);
+        jButton8.setBounds(1340, 800, 160, 60);
 
         jLabel1.setBackground(new java.awt.Color(255, 153, 153));
         jLabel1.setForeground(new java.awt.Color(255, 204, 204));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1.jpg"))); // NOI18N
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(-280, -250, 1820, 1120);
+        jLabel1.setBounds(-990, -240, 2490, 1120);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -230,7 +230,13 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+         int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to logout?", "Logout", JOptionPane.YES_NO_OPTION);
+         if (p==0){
         new login ().setVisible(true);
+         }
+         else{
+             JOptionPane.showMessageDialog(null, "Unable to logout");
+         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

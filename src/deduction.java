@@ -75,40 +75,40 @@ public class deduction extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel1.setText("First Name:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(257, 183, 93, 37);
+        jLabel1.setBounds(260, 190, 120, 37);
 
-        jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel2.setText("Last Name:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(257, 253, 86, 36);
+        jLabel2.setBounds(257, 253, 120, 36);
 
-        jLabel3.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel3.setText("Date of Birth:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(257, 327, 110, 31);
+        jLabel3.setBounds(257, 327, 130, 31);
 
-        jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel4.setText("Department:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(825, 119, 92, 38);
+        jLabel4.setBounds(787, 119, 130, 38);
 
-        jLabel5.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel5.setText("Job Title:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(825, 183, 82, 37);
+        jLabel5.setBounds(810, 190, 120, 37);
 
-        jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel6.setText(" Basic Salary:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(820, 254, 109, 34);
+        jLabel6.setBounds(790, 260, 140, 34);
 
-        jLabel7.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        jLabel7.setText("Employee Id:");
+        jLabel7.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jLabel7.setText("Employee ID:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(257, 119, 101, 38);
+        jLabel7.setBounds(257, 119, 130, 38);
 
         jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,9 +121,9 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField);
-        jTextField.setBounds(405, 116, 170, 38);
+        jTextField.setBounds(405, 116, 240, 40);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(405, 180, 170, 37);
+        jTextField2.setBounds(405, 180, 240, 40);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +131,7 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(405, 250, 170, 36);
+        jTextField3.setBounds(410, 250, 240, 40);
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,9 +139,9 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(405, 324, 170, 31);
+        jTextField4.setBounds(410, 320, 240, 40);
         getContentPane().add(jTextField5);
-        jTextField5.setBounds(935, 116, 170, 38);
+        jTextField5.setBounds(920, 120, 250, 40);
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,16 +149,16 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(935, 179, 170, 38);
+        jTextField6.setBounds(920, 180, 260, 40);
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(935, 250, 170, 36);
+        jTextField7.setBounds(925, 250, 270, 40);
 
-        jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel8.setText("Deducted by:");
         getContentPane().add(jLabel8);
         jLabel8.setBounds(257, 397, 136, 31);
 
-        r_percentage.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        r_percentage.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         r_percentage.setText("Percentage(%)");
         r_percentage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,9 +166,9 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(r_percentage);
-        r_percentage.setBounds(405, 397, 150, 31);
+        r_percentage.setBounds(405, 397, 170, 30);
 
-        r_amount.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        r_amount.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         r_amount.setText("Amount");
         r_amount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,44 +176,44 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(r_amount);
-        r_amount.setBounds(581, 397, 131, 31);
+        r_amount.setBounds(581, 397, 130, 31);
 
-        jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel9.setText("Percentage:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(257, 471, 103, 32);
+        jLabel9.setBounds(257, 471, 130, 32);
         getContentPane().add(txt_percentage);
-        txt_percentage.setBounds(718, 465, 150, 38);
+        txt_percentage.setBounds(820, 460, 160, 38);
 
-        jLabel10.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel10.setText("Amount:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(620, 470, 89, 30);
+        jLabel10.setBounds(720, 470, 89, 30);
         getContentPane().add(txt_deduction);
-        txt_deduction.setBounds(405, 465, 150, 38);
+        txt_deduction.setBounds(405, 465, 180, 40);
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setText("Total Deduction:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(820, 370, 123, 31);
+        jLabel11.setBounds(770, 380, 160, 31);
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setText("0.00");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(1008, 321, 56, 31);
+        jLabel12.setBounds(1000, 330, 90, 31);
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setText("Salary After Deduction:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(820, 319, 170, 32);
+        jLabel13.setBounds(770, 330, 210, 32);
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setText("0.00");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(1008, 370, 56, 32);
+        jLabel14.setBounds(1000, 380, 56, 32);
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -222,10 +222,10 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(257, 550, 87, 39);
+        jButton1.setBounds(257, 550, 110, 39);
 
         jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Calculate");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -234,10 +234,10 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(513, 550, 120, 39);
+        jButton2.setBounds(513, 550, 150, 39);
 
         jButton3.setBackground(new java.awt.Color(51, 51, 51));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Clear");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -249,7 +249,7 @@ public class deduction extends javax.swing.JFrame {
         jButton3.setBounds(810, 550, 100, 39);
 
         jButton4.setBackground(new java.awt.Color(51, 51, 51));
-        jButton4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -260,10 +260,10 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jButton4);
         jButton4.setBounds(1042, 550, 101, 39);
 
-        jLabel15.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel15.setText("Employee ID:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(257, 46, 101, 34);
+        jLabel15.setBounds(260, 50, 130, 34);
 
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,18 +276,16 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(405, 43, 700, 34);
+        jTextField8.setBounds(405, 43, 710, 40);
 
-        jLabel17.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5.jpg"))); // NOI18N
         jLabel17.setOpaque(true);
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(740, 30, 1350, 1060);
+        jLabel17.setBounds(1060, 220, 2180, 970);
 
-        jLabel16.setBackground(new java.awt.Color(204, 204, 255));
         jLabel16.setOpaque(true);
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(0, 0, 740, 840);
+        jLabel16.setBounds(0, 0, 1510, 840);
 
         jLabel18.setBackground(new java.awt.Color(204, 204, 255));
         jLabel18.setOpaque(true);
