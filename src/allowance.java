@@ -185,15 +185,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel14.setBounds(432, 515, 190, 24);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-=======
         jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
-=======
-        jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -205,15 +197,7 @@ public class allowance extends javax.swing.JFrame {
         jButton1.setBounds(267, 586, 120, 40);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-=======
         jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
-=======
-        jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Calculate");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -222,24 +206,10 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        jButton2.setBounds(529, 586, 120, 40);
-
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-=======
         jButton2.setBounds(510, 586, 140, 40);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
-=======
-        jButton2.setBounds(510, 586, 140, 40);
-
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Clear");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -251,15 +221,7 @@ public class allowance extends javax.swing.JFrame {
         jButton3.setBounds(788, 586, 100, 40);
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        jButton4.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-=======
         jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
-=======
-        jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
->>>>>>> Stashed changes
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -278,15 +240,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel15.setText("Total Amount:");
         getContentPane().add(jLabel15);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        jLabel15.setBounds(777, 518, 120, 18);
-=======
         jLabel15.setBounds(730, 513, 150, 30);
->>>>>>> Stashed changes
-=======
-        jLabel15.setBounds(730, 513, 150, 30);
->>>>>>> Stashed changes
 
         jLabel16.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel16.setText("0.00");
