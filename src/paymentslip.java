@@ -168,7 +168,7 @@ public class paymentslip extends javax.swing.JFrame {
         jLabel9.setBackground(new java.awt.Color(204, 204, 255));
         jLabel9.setOpaque(true);
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 0, 1480, 860);
+        jLabel9.setBounds(0, 0, 1540, 860);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

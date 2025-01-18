@@ -184,7 +184,9 @@ public class allowance extends javax.swing.JFrame {
         getContentPane().add(jLabel14);
         jLabel14.setBounds(471, 515, 151, 24);
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +196,9 @@ public class allowance extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(267, 586, 108, 40);
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Calculate");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,9 +206,11 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(529, 586, 115, 40);
+        jButton2.setBounds(529, 586, 120, 40);
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Clear");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +220,9 @@ public class allowance extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(788, 586, 92, 40);
 
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +240,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
         jLabel15.setText("Total Amount:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(777, 518, 103, 18);
+        jLabel15.setBounds(777, 518, 120, 18);
 
         jLabel16.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
         jLabel16.setText("0.00");
