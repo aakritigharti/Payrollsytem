@@ -48,7 +48,6 @@ public class menu extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         empmenu.setText("Employee RP");
         empmenu.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +60,7 @@ public class menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(218, 149, 80));
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Allowance");
@@ -71,9 +70,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(533, 153, 175, 39);
+        jButton1.setBounds(720, 170, 175, 39);
 
-        jButton2.setBackground(new java.awt.Color(218, 149, 80));
+        jButton2.setBackground(new java.awt.Color(102, 102, 102));
         jButton2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Update Salary");
@@ -83,9 +82,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(206, 265, 238, 39);
+        jButton2.setBounds(1100, 70, 238, 39);
 
-        jButton3.setBackground(new java.awt.Color(218, 149, 80));
+        jButton3.setBackground(new java.awt.Color(102, 102, 102));
         jButton3.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Deduction");
@@ -95,9 +94,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(533, 265, 175, 39);
+        jButton3.setBounds(710, 290, 175, 39);
 
-        jButton4.setBackground(new java.awt.Color(218, 149, 80));
+        jButton4.setBackground(new java.awt.Color(102, 102, 102));
         jButton4.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Payment slip");
@@ -107,9 +106,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(841, 153, 175, 39);
+        jButton4.setBounds(710, 420, 175, 39);
 
-        jButton5.setBackground(new java.awt.Color(218, 149, 80));
+        jButton5.setBackground(new java.awt.Color(102, 102, 102));
         jButton5.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Search");
@@ -119,9 +118,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(1150, 153, 175, 39);
+        jButton5.setBounds(1150, 290, 175, 39);
 
-        jButton6.setBackground(new java.awt.Color(218, 149, 80));
+        jButton6.setBackground(new java.awt.Color(102, 102, 102));
         jButton6.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Report");
@@ -131,16 +130,16 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(841, 265, 175, 39);
+        jButton6.setBounds(1140, 170, 175, 39);
 
-        jButton7.setBackground(new java.awt.Color(218, 149, 80));
+        jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("About");
         getContentPane().add(jButton7);
-        jButton7.setBounds(1150, 265, 175, 39);
+        jButton7.setBounds(1160, 410, 175, 39);
 
-        jButton9.setBackground(new java.awt.Color(218, 149, 80));
+        jButton9.setBackground(new java.awt.Color(102, 102, 102));
         jButton9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Employee Registration");
@@ -150,7 +149,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(206, 153, 250, 39);
+        jButton9.setBounds(690, 70, 250, 39);
 
         jButton8.setBackground(new java.awt.Color(51, 51, 51));
         jButton8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
@@ -162,17 +161,14 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(1220, 370, 100, 40);
+        jButton8.setBounds(1240, 610, 100, 40);
 
         jLabel1.setBackground(new java.awt.Color(255, 153, 153));
         jLabel1.setForeground(new java.awt.Color(255, 204, 204));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pngwing.com (3)new.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1.jpg"))); // NOI18N
+        jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 120, 1490, 900);
-
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 130, 1520, 950);
+        jLabel1.setBounds(-280, -250, 1820, 1120);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -288,7 +284,6 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPopupMenu jPopupMenu1;
     // End of variables declaration//GEN-END:variables
 }

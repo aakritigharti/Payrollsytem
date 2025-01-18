@@ -68,6 +68,9 @@ public class deduction extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -185,7 +188,7 @@ public class deduction extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
         jLabel10.setText("Amount:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(623, 472, 89, 30);
+        jLabel10.setBounds(620, 470, 89, 30);
         getContentPane().add(txt_deduction);
         txt_deduction.setBounds(405, 465, 150, 38);
 
@@ -209,7 +212,9 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jLabel14);
         jLabel14.setBounds(1008, 370, 56, 32);
 
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,7 +224,9 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(257, 550, 87, 39);
 
+        jButton2.setBackground(new java.awt.Color(51, 51, 51));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Calculate");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,7 +236,9 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(513, 550, 120, 39);
 
+        jButton3.setBackground(new java.awt.Color(51, 51, 51));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Clear");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +248,9 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(810, 550, 100, 39);
 
+        jButton4.setBackground(new java.awt.Color(51, 51, 51));
         jButton4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,6 +277,22 @@ public class deduction extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField8);
         jTextField8.setBounds(405, 43, 700, 34);
+
+        jLabel17.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
+        jLabel17.setOpaque(true);
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(740, 30, 1350, 1060);
+
+        jLabel16.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel16.setOpaque(true);
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(0, 0, 740, 840);
+
+        jLabel18.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel18.setOpaque(true);
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(740, 0, 790, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -524,6 +551,9 @@ PreparedStatement ps = null;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
