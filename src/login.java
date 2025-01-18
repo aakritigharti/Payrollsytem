@@ -63,9 +63,9 @@ public class login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel1.setText("Welcome to Payroll!");
+        jLabel1.setText("Welcome to Payroll");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(820, 170, 536, 61);
+        jLabel1.setBounds(820, 170, 550, 61);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Username:");

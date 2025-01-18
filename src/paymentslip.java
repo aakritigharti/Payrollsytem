@@ -223,29 +223,25 @@ public class paymentslip extends javax.swing.JFrame {
             String val3 = txt_dob.getText();
              String val4 = txt_department.getText();
               String val5 = txt_jobtitle.getText();
-<<<<<<< HEAD
+
                String salary = txt_salary.getText();        
     PreparedStatement ps = null;
     ResultSet rs = null;
-          try {
+         /* try {
                   String salaryQuery = "SELECT salary FROM empregister WHERE id = ?";
-=======
-               String salary = txt_salary.getText();
+
+               String salary = txt_salary.getText();*/
  
-    PreparedStatement ps = null;
-    ResultSet rs = null;
+
           try {
             String salaryQuery = "SELECT * FROM empregister WHERE id = ?";
->>>>>>> 5128a92 (.)
     ps = db.connect().prepareStatement(salaryQuery);
     ps.setString(1, val1); // Set the employee ID
     rs = ps.executeQuery();
 
-<<<<<<< HEAD
-    float basicSalary = 0; // Initialize basicSalary
-=======
+
    float basicSalary = 0; // Initialize basicSalary
->>>>>>> 5128a92 (.)
+
     if (rs.next()) {
         basicSalary = rs.getFloat("salary"); // Get basic salary from empregister table
     }
@@ -287,7 +283,6 @@ float totalEarnings = Float.parseFloat(totalAmount); // Handle decimal input
 float totalDeductions = Float.parseFloat(deductionAmount); // Handle decimal input
 float netPay = basicSalary + totalEarnings - totalDeductions;
 
-<<<<<<< HEAD
     /*String allowanceQuery = "SELECT * FROM empregister WHERE id = ?";
     ps = db.connect().prepareStatement(allowanceQuery);
     ps.setString(1, val1); // Set the employee ID
@@ -298,12 +293,10 @@ float netPay = basicSalary + totalEarnings - totalDeductions;
             // Create a Document object to generate PDF
             Document document = new Document();
       //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/Payment Slip.pdf";  
-      String filePath = "D:\\a/Payment Slip.pdf";
-=======
-            // Create a Document object to generate PDF
-            Document document = new Document();
+     // String filePath = "D:\\a/Payment Slip.pdf";
+
       String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/Payment Slip.pdf";  
->>>>>>> 5128a92 (.)
+
             PdfWriter.getInstance(document, new FileOutputStream(filePath));
             document.open();
 
@@ -315,12 +308,9 @@ float netPay = basicSalary + totalEarnings - totalDeductions;
     // Add a blank line
     document.add(new Paragraph(" "));
 
-<<<<<<< HEAD
+
     // Add bill details in a structured format
     document.add(new Paragraph("PAY SLIP", FontFactory.getFont(FontFactory.TIMES_BOLD, 20, Font.BOLD)));
-=======
-  document.add(new Paragraph("PAY SLIP", FontFactory.getFont(FontFactory.TIMES_BOLD, 20, Font.BOLD)));
->>>>>>> 5128a92 (.)
 document.add(new Paragraph(new Date().toString()));
 document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
@@ -333,28 +323,24 @@ document.add(new Paragraph("----------------------------------------------------
 
 // Salary Details
 document.add(new Paragraph("SALARY DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
-document.add(new Paragraph("Basic Salary: rs " + salary, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Basic Salary: Rs. " + salary, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
 document.add(new Paragraph("Overtime: " + overtime + " Hours", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-document.add(new Paragraph("Bonus: rs " + bonus, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-document.add(new Paragraph("Other Allowances: rs " + otherAllowance, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Bonus: Rs. " + bonus, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Other Allowances: Rs." + otherAllowance, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
 document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
 // Deduction Details
 document.add(new Paragraph("DEDUCTION DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
 
-document.add(new Paragraph("Total Deductions: rs" + deductionAmount, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Total Deductions: Rs." + deductionAmount, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
 document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
 
 // Total Payment Details
 document.add(new Paragraph("TOTAL PAYMENT DETAILS:", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
-document.add(new Paragraph("Total Earnings: rs " + totalEarnings, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
-document.add(new Paragraph("Net Pay: rs " + String.format("%.2f", netPay), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Total Earnings: Rs. " + totalEarnings, FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
+document.add(new Paragraph("Net Pay: Rs. " + String.format("%.2f", netPay), FontFactory.getFont(FontFactory.TIMES_ROMAN, 12)));
 document.add(new Paragraph("-------------------------------------------------------------------------------------------"));
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 5128a92 (.)
 
 
             // Close the document
