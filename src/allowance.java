@@ -186,7 +186,11 @@ public class allowance extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+=======
+        jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+>>>>>>> Stashed changes
 =======
         jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
 >>>>>>> Stashed changes
@@ -202,7 +206,11 @@ public class allowance extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+=======
+        jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+>>>>>>> Stashed changes
 =======
         jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
 >>>>>>> Stashed changes
@@ -215,10 +223,17 @@ public class allowance extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         jButton2.setBounds(529, 586, 120, 40);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+=======
+        jButton2.setBounds(510, 586, 140, 40);
+
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+>>>>>>> Stashed changes
 =======
         jButton2.setBounds(510, 586, 140, 40);
 
@@ -237,7 +252,11 @@ public class allowance extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         jButton4.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+=======
+        jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+>>>>>>> Stashed changes
 =======
         jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
 >>>>>>> Stashed changes
@@ -260,7 +279,11 @@ public class allowance extends javax.swing.JFrame {
         jLabel15.setText("Total Amount:");
         getContentPane().add(jLabel15);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         jLabel15.setBounds(777, 518, 120, 18);
+=======
+        jLabel15.setBounds(730, 513, 150, 30);
+>>>>>>> Stashed changes
 =======
         jLabel15.setBounds(730, 513, 150, 30);
 >>>>>>> Stashed changes
