@@ -212,7 +212,7 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jLabel14);
         jLabel14.setBounds(1000, 380, 56, 32);
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
@@ -224,7 +224,7 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(257, 550, 110, 39);
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Calculate");
@@ -236,7 +236,7 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(513, 550, 150, 39);
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 51));
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Clear");
@@ -248,7 +248,7 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(810, 550, 100, 39);
 
-        jButton4.setBackground(new java.awt.Color(51, 51, 51));
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Back");
