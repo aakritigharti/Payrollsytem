@@ -72,7 +72,7 @@ public class updatesalary extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(359, 37, 700, 40);
+        jTextField1.setBounds(359, 37, 760, 40);
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(255, 255, 255));
@@ -102,7 +102,7 @@ public class updatesalary extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField5);
-        jTextField5.setBounds(888, 111, 220, 40);
+        jTextField5.setBounds(888, 111, 230, 40);
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(255, 255, 255));
@@ -137,7 +137,7 @@ public class updatesalary extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel6.setText("Basic Salary:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(700, 249, 170, 40);
+        jLabel6.setBounds(710, 260, 140, 40);
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel7.setText("Department:");
@@ -147,7 +147,7 @@ public class updatesalary extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel8.setText("Update Salary By:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(198, 347, 190, 34);
+        jLabel8.setBounds(210, 350, 190, 34);
 
         jRadioButton1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jRadioButton1.setText("Percentage(%)");
@@ -157,7 +157,7 @@ public class updatesalary extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton1);
-        jRadioButton1.setBounds(380, 350, 170, 30);
+        jRadioButton1.setBounds(410, 350, 170, 30);
 
         jRadioButton2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jRadioButton2.setText("Amount");
@@ -167,12 +167,12 @@ public class updatesalary extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton2);
-        jRadioButton2.setBounds(590, 340, 117, 44);
+        jRadioButton2.setBounds(600, 340, 117, 44);
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel9.setText("Percentage:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(188, 445, 150, 31);
+        jLabel9.setBounds(200, 440, 150, 31);
 
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(255, 255, 255));
@@ -231,10 +231,11 @@ public class updatesalary extends javax.swing.JFrame {
         jButton3.setBounds(731, 532, 110, 42);
 
         jLabel11.setBackground(new java.awt.Color(51, 102, 255));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(1100, 350, 1790, 680);
+        jLabel11.setBounds(1060, 320, 1790, 680);
 
+        jLabel12.setBackground(new java.awt.Color(204, 204, 255));
         jLabel12.setOpaque(true);
         getContentPane().add(jLabel12);
         jLabel12.setBounds(0, 20, 1790, 840);

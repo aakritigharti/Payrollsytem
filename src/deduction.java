@@ -278,11 +278,13 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jTextField8);
         jTextField8.setBounds(405, 43, 710, 40);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5.jpg"))); // NOI18N
+        jLabel17.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
         jLabel17.setOpaque(true);
         getContentPane().add(jLabel17);
         jLabel17.setBounds(1060, 220, 2180, 970);
 
+        jLabel16.setBackground(new java.awt.Color(204, 204, 255));
         jLabel16.setOpaque(true);
         getContentPane().add(jLabel16);
         jLabel16.setBounds(0, 0, 1510, 840);

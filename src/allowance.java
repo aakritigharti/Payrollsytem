@@ -142,7 +142,7 @@ public class allowance extends javax.swing.JFrame {
         getContentPane().add(jTextField6);
         jTextField6.setBounds(390, 370, 200, 40);
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(387, 443, 220, 40);
+        jTextField7.setBounds(387, 443, 200, 40);
 
         jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel8.setText("Overtime:");
@@ -247,10 +247,11 @@ public class allowance extends javax.swing.JFrame {
         getContentPane().add(jLabel16);
         jLabel16.setBounds(876, 511, 90, 30);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5.jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(1120, 320, 1610, 780);
+        jLabel17.setBounds(1080, 320, 1610, 780);
 
+        jLabel18.setBackground(new java.awt.Color(204, 204, 255));
         jLabel18.setOpaque(true);
         getContentPane().add(jLabel18);
         jLabel18.setBounds(0, 0, 1610, 920);

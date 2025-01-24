@@ -165,9 +165,10 @@ public class paymentslip extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(1060, 280, 830, 860);
 
+        jLabel9.setBackground(new java.awt.Color(204, 204, 255));
         jLabel9.setOpaque(true);
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 0, 1480, 860);
+        jLabel9.setBounds(0, 0, 1540, 860);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -259,9 +260,9 @@ float netPay = basicSalary + totalEarnings - totalDeductions;
             // Create a Document object to generate PDF
             Document document = new Document();
       //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/Payment Slip.pdf";  
-     // String filePath = "D:\\a/Payment Slip.pdf";
+      String filePath = "D:\\a/Payment Slip.pdf";
 
-      String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/Payment Slip.pdf";  
+      //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/Payment Slip.pdf";  
 
             PdfWriter.getInstance(document, new FileOutputStream(filePath));
             document.open();

@@ -178,21 +178,21 @@ return nextId;
         jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel8.setText("Job Title:");
         jInternalFrame1.getContentPane().add(jLabel8);
-        jLabel8.setBounds(630, 90, 150, 35);
+        jLabel8.setBounds(490, 90, 150, 35);
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel9.setText("Basic Salary:");
         jInternalFrame1.getContentPane().add(jLabel9);
-        jLabel9.setBounds(620, 160, 150, 38);
+        jLabel9.setBounds(490, 150, 150, 38);
 
         jLabel10.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel10.setText("Department:");
         jInternalFrame1.getContentPane().add(jLabel10);
-        jLabel10.setBounds(626, 27, 160, 40);
+        jLabel10.setBounds(490, 30, 160, 40);
         jInternalFrame1.getContentPane().add(jLabel11);
         jLabel11.setBounds(992, 23, 0, 24);
         jInternalFrame1.getContentPane().add(jTextField5);
-        jTextField5.setBounds(794, 23, 210, 40);
+        jTextField5.setBounds(650, 30, 210, 40);
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,9 +200,9 @@ return nextId;
             }
         });
         jInternalFrame1.getContentPane().add(jTextField6);
-        jTextField6.setBounds(794, 151, 210, 40);
+        jTextField6.setBounds(650, 150, 210, 40);
         jInternalFrame1.getContentPane().add(jTextField7);
-        jTextField7.setBounds(794, 89, 210, 40);
+        jTextField7.setBounds(650, 90, 210, 40);
 
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,7 +235,7 @@ return nextId;
             }
         });
         jInternalFrame1.getContentPane().add(jButton1);
-        jButton1.setBounds(624, 312, 160, 41);
+        jButton1.setBounds(470, 300, 160, 41);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
@@ -247,7 +247,7 @@ return nextId;
             }
         });
         jInternalFrame1.getContentPane().add(jButton2);
-        jButton2.setBounds(873, 312, 120, 41);
+        jButton2.setBounds(680, 300, 120, 41);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
@@ -259,12 +259,12 @@ return nextId;
             }
         });
         jInternalFrame1.getContentPane().add(jButton3);
-        jButton3.setBounds(761, 393, 110, 41);
+        jButton3.setBounds(610, 380, 110, 41);
         jInternalFrame1.getContentPane().add(jTextField4);
         jTextField4.setBounds(160, 210, 210, 40);
 
         getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(191, 52, 1200, 590);
+        jInternalFrame1.setBounds(190, 40, 1150, 590);
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel1.setText("Registration Of Employees");
@@ -337,13 +337,19 @@ System.out.println("jTextField1 is null!");
        
         try {
             
-            ps = db.connect().prepareStatement(query);
+            ps = db.connect().prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setLong(1, uniqueID);
             ps.setString(2,firstname );
             ps.setString(3,lastname );
             ps.setDate(4, sqlDate);
             ps.setInt(5, gender);
-            ps.setString(6,contact );
+           // ps.setString(6,contact );
+            if(contact.length() != 10) 
+            { 
+                JOptionPane.showMessageDialog(null, "Contact length must be exactly 10 digits.");
+            } else 
+            { ps.setString(6, contact); 
+            }
             ps.setString(7,address);
             ps.setString(8,department );
             ps.setString(9,jobtitle );
