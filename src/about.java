@@ -1,23 +1,38 @@
-
-import javax.swing.JFrame;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import com.itextpdf.text.Chunk;
+import javax.swing.*;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Element;
+import javax.swing.text.StyledDocument;
+import java.io.*;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.pdf.PdfWriter;
 
 /**
  *
- * @author Aakriti
+ * @author User
  */
 public class about extends javax.swing.JFrame {
+ private static final String FILE_NAME = "D:\\Payroll Management\\Payrollsytem.txt";
+ //private JTextPane jTextPane1;
+ 
+  //private static final String PDF_FILE_NAME = "D:\\a/termsAndConditions.pdf";
 
     /**
      * Creates new form about
      */
     public about() {
         initComponents();
-         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        loadText(jTextPane1);
+        //JScrollPane scrollPane = new JScrollPane(jTextPane1);
+        //this.add(scrollPane);
     }
 
     /**
@@ -30,41 +45,162 @@ public class about extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 36)); // NOI18N
-        jLabel1.setText("Terms and Condtions of Payroll System");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("                Terms and Conditions");
 
-        jLabel2.setText("jLabel2");
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setText("ADD");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setText("CREATE PDF");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(405, 405, 405))
             .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(24, 24, 24))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try {
+        saveText(jTextPane1.getText());
+        JOptionPane.showMessageDialog(null, "Added successfully");
+    } 
+  catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+    }
+
+
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:                                         
+    try {
+        Document document = new Document();
+        String filePath = "D:\\a/termsAndConditions.pdf";
+        PdfWriter.getInstance(document, new FileOutputStream(filePath));
+        document.open();
+
+        // Define fonts
+        Font normalFont = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL);
+        Font boldFont = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD);
+
+        // Get full text from JTextPane
+        String fullText = jTextPane1.getText();
+
+        // List of words/phrases to be bold
+        String[] boldWords = {
+            "TERMS AND CONDITION FOR HEIXIN", 
+            "1. Allowance rates:", 
+            "2. Payroll Calculation", 
+            "3. Bonus and other allowances:", 
+            "4. Total salary calculations:", 
+            "5. Deductions:", 
+            "6. Penalties and Incentives:", 
+            "7. Compliance:",
+             "Employee Name:_____________________________",
+
+"Employee Signature:__________________________",
+
+"Date:______________________________________"
+        };
+
+        // Create paragraph and process text
+        Paragraph paragraph = new Paragraph();
+        for (String line : fullText.split("\n")) {  // Split by lines
+            Font font = normalFont;
+            for (String boldWord : boldWords) {
+                if (line.trim().equalsIgnoreCase(boldWord)) { 
+                    font = boldFont; // Make it bold if it matches
+                    break;
+                }
+            }
+            paragraph.add(new Chunk(line + "\n", font));
+        }
+
+        document.add(paragraph);
+        document.close();
+        JOptionPane.showMessageDialog(null, "PDF created successfully");
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+    }
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+          
+    private void saveText(String text) {
+        // This method saves the provided text to the specified file
+        try (FileWriter writer = new FileWriter(FILE_NAME)) {
+            writer.write(text);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+        }
+    }
+    
+    private void loadText(JTextPane textArea) {
+        // This method loads the text from the file into the provided JTextArea
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            textArea.read(reader, null);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+        }
+    }
+
+
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -101,7 +237,10 @@ public class about extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
