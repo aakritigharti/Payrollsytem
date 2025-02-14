@@ -67,7 +67,10 @@ public class allowance extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -147,42 +150,48 @@ public class allowance extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel8.setText("Overtime:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(760, 110, 110, 30);
+        jLabel8.setBounds(760, 90, 110, 30);
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel9.setText("Bonus:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(760, 170, 130, 40);
+        jLabel9.setBounds(760, 140, 130, 40);
 
         jLabel10.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel10.setText("Other:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(760, 240, 100, 28);
+        jLabel10.setBounds(760, 200, 100, 28);
 
         jLabel11.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel11.setText("Total Overtime:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(758, 306, 150, 30);
+        jLabel11.setBounds(730, 390, 150, 30);
 
         jLabel13.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel13.setText("Rate Per Hour:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(753, 379, 160, 31);
+        jLabel13.setBounds(740, 450, 160, 31);
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(930, 100, 200, 40);
+        jTextField8.setBounds(920, 80, 200, 40);
         getContentPane().add(jTextField9);
-        jTextField9.setBounds(929, 160, 200, 40);
+        jTextField9.setBounds(920, 140, 200, 40);
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(929, 230, 200, 40);
+        jTextField10.setBounds(920, 190, 200, 40);
+
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField11);
-        jTextField11.setBounds(929, 300, 200, 40);
+        jTextField11.setBounds(920, 380, 210, 40);
         getContentPane().add(jTextField12);
-        jTextField12.setBounds(931, 374, 200, 40);
+        jTextField12.setBounds(920, 440, 210, 40);
 
         jLabel14.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel14.setText("Calculated Amount:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(432, 515, 190, 24);
+        jLabel14.setBounds(340, 520, 190, 24);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -235,26 +244,41 @@ public class allowance extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel12.setText("0.00");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(634, 515, 100, 24);
+        jLabel12.setBounds(530, 520, 200, 24);
 
         jLabel15.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel15.setText("Total Amount:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(730, 513, 150, 30);
+        jLabel15.setBounds(720, 520, 150, 30);
 
         jLabel16.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel16.setText("0.00");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(876, 511, 90, 30);
+        jLabel16.setBounds(870, 520, 190, 30);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
         getContentPane().add(jLabel17);
         jLabel17.setBounds(1080, 320, 1610, 780);
 
-        jLabel18.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel18.setOpaque(true);
+        jLabel19.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jLabel19.setText("Provident Fund:");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(730, 340, 170, 23);
+
+        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField13);
+        jTextField13.setBounds(920, 322, 210, 40);
+
+        jLabel18.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jLabel18.setText("CIF:");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(0, 0, 1610, 920);
+        jLabel18.setBounds(760, 270, 120, 23);
+        getContentPane().add(jTextField14);
+        jTextField14.setBounds(920, 252, 200, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -395,6 +419,8 @@ public class allowance extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int salary = Integer.parseInt(jTextField6.getText());
          int overtime = Integer.parseInt(jTextField8.getText());
+         //int providentfund = Integer.parseInt(jTextField13.getText());
+         //int cif = Integer.parseInt(jTextField14.getText());
          
          double eight = 8;
           double days = 25; 
@@ -405,19 +431,29 @@ public class allowance extends javax.swing.JFrame {
           String x= String.valueOf(Total_Overtime);
           jTextField11.setText(x);
           
+          double Total_pf = 0.1*salary;
+          String xs= String.valueOf(Total_pf);
+          jTextField13.setText(xs);
+          
+          double Total_ci =  0.11*salary;
+          String xp= String.valueOf(Total_ci);
+          jTextField14.setText(xp);
+          
           dbop= salary/ days/eight;
           String s= String.valueOf(dbop);
           jTextField12.setText(s);
           
+          
+          
           int bonus = Integer.parseInt(jTextField9.getText());
           int other = Integer.parseInt(jTextField10.getText());
           int c = bonus+other;
-          double calc =Total_Overtime* dbop+c;
-          String f =String.valueOf(calc);
+          double calc =Total_Overtime* dbop+c - Total_pf - Total_ci;
+          String f = String.format("%.4f", calc);
           jLabel12.setText(f);
           
           double cal = calc + salary;
-          String g = String.valueOf(cal);
+          String g = String.format("%.4f", cal);
           jLabel16.setText(g);
           
           
@@ -429,6 +465,14 @@ public class allowance extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField13ActionPerformed
+
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -480,6 +524,7 @@ public class allowance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -492,6 +537,8 @@ public class allowance extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

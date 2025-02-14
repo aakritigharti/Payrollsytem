@@ -38,6 +38,8 @@ public class menu extends javax.swing.JFrame {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         empmenu = new javax.swing.JMenuItem();
+        allomenu = new javax.swing.JMenuItem();
+        dedmenu = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -56,6 +58,22 @@ public class menu extends javax.swing.JFrame {
             }
         });
         jPopupMenu1.add(empmenu);
+
+        allomenu.setText("Allowance RP");
+        allomenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allomenuActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(allomenu);
+
+        dedmenu.setText("Deduction RP");
+        dedmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dedmenuActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(dedmenu);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -136,6 +154,11 @@ public class menu extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("About");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton7);
         jButton7.setBounds(1260, 220, 210, 60);
 
@@ -242,6 +265,19 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
         new search().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+         new about().setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void allomenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allomenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_allomenuActionPerformed
+
+    private void dedmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dedmenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dedmenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,6 +314,8 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem allomenu;
+    private javax.swing.JMenuItem dedmenu;
     private javax.swing.JMenuItem empmenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

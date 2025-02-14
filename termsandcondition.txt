@@ -1,0 +1,43 @@
+                                                     TERMS AND CONDITION FOR HEIXIN
+
+This company will calculates employee remuneration, including basic salary, allowances, bonuses, overtime, and applicable deductions, ensuring transparency and fairness in the compensation process.
+
+1. Allowance rates:
+Allowance Rate: Starting salary will be Rs.35000 for each employee. However salary will increase by 2% based on their performance. 
+Overtime Rate: Overtime is compensated at a rate of 1.5 times the regular hourly rate.
+
+2. Payroll Calculation
+Payroll Period: The standard payroll period is 28 days.
+Daily Basic Pay (DBP): Daily Basic Pay is calculated by dividing the employee's salary by the number of days in the payroll period and the allowance factor.
+Overtime Calculation: The total overtime compensation is determined by multiplying the number of overtime hours worked by the overtime rate of 1.5.
+
+3. Bonus and other allowances:
+Bonuses and Other Allowances: Additional compensation, such as bonuses and other allowances, are included in the total payroll amount based on company policies.
+
+4. Total salary calculations:
+Final Salary: The final salary is the sum of the total payroll amount (including overtime, bonuses, and other allowances) and the basic salary.
+
+5. Deductions:
+Provident Fund (PF): 10% of the basic salary is deducted as the Provident Fund.
+Contributory Insurance Fund (CIF): 11% of the basic salary is deducted as the Contributory Insurance Fund.
+Other Applicable Deductions: The payroll system includes various other deductions such as taxes, insurance, etc., as per company policy and legal requirements.
+Deduction Rules: Deductions are calculated based on predefined rules, ensuring accuracy and compliance.
+Net Salary: The net salary is the final amount after all allowances and deductions have been applied.
+
+6. Penalties and Incentives:
+Penalties for Extended Leave: If an employee takes leave for an extended period without prior approval, a penalty is applied to their salary. The penalty rate is 2% of the basic salary per day of unapproved leave.
+Incentives for Positive Performance: If an employee achieves exceptional performance or contributes significantly to the company's success, they may receive an increase in their bonuses or allowances. The increase rate is 5% of the basic salary for outstanding performance.
+
+7. Compliance:
+Legal Compliance: The payroll system complies with all relevant labor laws and regulations to ensure that employee compensation is fair, transparent, and legally compliant.
+Policy Updates: The terms and conditions of the payroll system are subject to periodic review and updates to reflect changes in company policy and legal requirements.
+
+
+
+By signing below, I accept these terms and conditions:
+
+Employee Name:_____________________________
+
+Employee Signature:__________________________
+
+Date:______________________________________
