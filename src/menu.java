@@ -1,10 +1,17 @@
 
 import javax.swing.JFrame;
 import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.mysql.cj.jdbc.result.ResultSetMetaData;
 import javax.swing.JOptionPane;
 import java.io.FileOutputStream;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Date;
 
 
@@ -209,34 +216,113 @@ jPopupMenu1.show(jButton6, jButton6.getWidth()/2  , jButton6.getHeight()/2  );
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void empmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empmenuActionPerformed
-
-        
+ 
+    PreparedStatement ps = null;
+    ResultSet rs = null;
              try { 
     Document document = new Document();
     
-   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    String filePath = "D:\\a/Payment Slip.pdf";
+   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    //String filePath = "D:\\a/Payment Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
-    document.add(new Paragraph(new Date().toString()));
-    document.add(new Paragraph("---------------------------------------------------------------------------"));
-    document.add(new Paragraph("id: John"));
-    document.add(new Paragraph("First Name: John"));
-    document.add(new Paragraph("Last Name: Doe"));
-    document.add(new Paragraph("Address: 123 Main Street, City, Country"));
-    document.add(new Paragraph("Date of Birth: John"));
-    document.add(new Paragraph("Gender: John"));
-    document.add(new Paragraph("Department: John"));
-    document.add(new Paragraph("Job Title: John"));
-    document.add(new Paragraph("Salary: John"));
-    document.add(new Paragraph("Contact: John")); 
-    document.close();
-    JOptionPane.showMessageDialog(null, "PDF created successfully!");
-} catch (Exception ex) {
-    JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-}
-      
+   document.add(new Paragraph("Generated on: " + new Date().toString()));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------"));
+             Font boldFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD); 
+            document.add(new Paragraph("                                      Employee Details Report",boldFont));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------"));
+
+    
+      // Create a table with appropriate number of columns
+            PdfPTable table = new PdfPTable(10); // Adjust column count based on your data
+            table.setWidthPercentage(110); // Make the table occupy full width
+            table.setSpacingBefore(10f); // Add some spacing before the table
+            table.setSpacingAfter(10f);
+            
+             float[] columnWidths = {1f, 2f, 2f, 3f, 2f, 1.5f, 2.5f, 2.5f, 2f, 2f};
+            table.setWidths(columnWidths);
+
+            // Add table headers
+            String[] headers = {
+                "ID", "First Name", "Last Name", "Address", 
+                "Date of Birth", "Gender", "Department", 
+                "Job Title", "Salary", "Contact"
+            };
+             Font headerFont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL); // Bold font for headers
+            for (String header : headers) {
+                PdfPCell cell = new PdfPCell(new Paragraph(header, headerFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+            }
+
+            // Regular font for employee data
+            Font dataFont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL);
+            // Query the database
+            String query = "SELECT * FROM empregister";
+            ps = db.connect().prepareStatement(query);
+            rs = ps.executeQuery();
+
+            // Add rows to the table
+            while (rs.next()) {
+                PdfPCell cell;
+
+                cell = new PdfPCell(new Paragraph(rs.getString("id"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("firstname"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("lastname"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("address"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("dateofbirth"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("gender"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("department"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("jobtitle"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("salary"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("contact"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+            
+            }
+
+            // Add table to document
+            document.add(table);
+            
+            // Close the document
+            document.close();
+
+            // Notify user of success
+             // Show success message
+            JOptionPane.showMessageDialog(null, "PDF created successfully!");
+        } catch (Exception ex) {
+            // Handle any exceptions (e.g., file errors, iText issues)
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+        }
+    
     }//GEN-LAST:event_empmenuActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -271,11 +357,240 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void allomenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allomenuActionPerformed
-        // TODO add your handling code here:
+          PreparedStatement ps = null;
+    ResultSet rs = null;
+             try { 
+    Document document = new Document();
+    
+   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    //String filePath = "D:\\a/Payment Slip.pdf";
+                 
+PdfWriter.getInstance(document, new FileOutputStream(filePath));
+ document.open();
+   document.add(new Paragraph("Generated on: " + new Date().toString()));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------"));
+             Font boldFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD); 
+            document.add(new Paragraph("                                      Allowance Report",boldFont));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------"));
+
+    
+      // Create a table with appropriate number of columns
+            PdfPTable table = new PdfPTable(14); // Adjust column count based on your data
+            table.setWidthPercentage(110); // Make the table occupy full width
+            table.setSpacingBefore(10f); // Add some spacing before the table
+            table.setSpacingAfter(10f);
+            
+             float[] columnWidths = {1f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f,2f};
+            table.setWidths(columnWidths);
+
+            // Add table headers
+            String[] headers = {
+                "ID", "First Name", "Last Name", 
+                "Department", "Salary", "Overtime", "Bonus", "Other", "CIF", "PF", "Total overtime", "Rate Per Hour", "Calculated Amount", "Total Amount "
+            };
+             Font headerFont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL); // Bold font for headers
+            for (String header : headers) {
+                PdfPCell cell = new PdfPCell(new Paragraph(header, headerFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+            }
+
+            // Regular font for employee data
+            Font dataFont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL);
+            // Query the database
+            String query = "SELECT * FROM allowance";
+            ps = db.connect().prepareStatement(query);
+            rs = ps.executeQuery();
+
+            // Add rows to the table
+            while (rs.next()) {
+                PdfPCell cell;
+
+                cell = new PdfPCell(new Paragraph(rs.getString("allowance_id"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("first_name"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("last_name"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+
+
+
+                cell = new PdfPCell(new Paragraph(rs.getString("Department"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+
+                cell = new PdfPCell(new Paragraph(rs.getString("salary"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+ 
+                
+                cell = new PdfPCell(new Paragraph(rs.getString("Overtime"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("Bonus"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("Other"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("CIF"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("ProvidentFund"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+                
+                cell = new PdfPCell(new Paragraph(rs.getString("TotalOvertime"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("RatePerHour"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("Calculated amt"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("TotalAmount"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+               
+
+            
+            }
+
+            // Add table to document
+            document.add(table);
+            
+            // Close the document
+            document.close();
+
+            // Notify user of success
+             // Show success message
+            JOptionPane.showMessageDialog(null, "PDF created successfully!");
+        } catch (Exception ex) {
+            // Handle any exceptions (e.g., file errors, iText issues)
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+        }
     }//GEN-LAST:event_allomenuActionPerformed
 
     private void dedmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dedmenuActionPerformed
-        // TODO add your handling code here:
+        
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+             try { 
+    Document document = new Document();
+    
+   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    //String filePath = "D:\\a/Payment Slip.pdf";
+                 
+PdfWriter.getInstance(document, new FileOutputStream(filePath));
+ document.open();
+   document.add(new Paragraph("Generated on: " + new Date().toString()));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------"));
+             Font boldFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD); 
+            document.add(new Paragraph("                                      Deduction Details Report",boldFont));
+            document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------"));
+
+    
+      // Create a table with appropriate number of columns
+            PdfPTable table = new PdfPTable(8); // Adjust column count based on your data
+            table.setWidthPercentage(110); // Make the table occupy full width
+            table.setSpacingBefore(10f); // Add some spacing before the table
+            table.setSpacingAfter(10f);
+            
+             float[] columnWidths = {1f, 2f, 2f, 2f, 2f, 2f, 2.5f, 2.5f,};
+            table.setWidths(columnWidths);
+
+            // Add table headers
+            String[] headers = {
+                "ID", "First Name", "Last Name", 
+                "Date of Birth","Department", 
+                "Job Title", "Salary", "Deduction Amt"
+            };
+             Font headerFont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL); // Bold font for headers
+            for (String header : headers) {
+                PdfPCell cell = new PdfPCell(new Paragraph(header, headerFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+            }
+
+            // Regular font for employee data
+            Font dataFont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL);
+            // Query the database
+            String query = "SELECT * FROM deductions";
+            ps = db.connect().prepareStatement(query);
+            rs = ps.executeQuery();
+
+            // Add rows to the table
+            while (rs.next()) {
+                PdfPCell cell;
+
+                cell = new PdfPCell(new Paragraph(rs.getString("deduction_id"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("first_name"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("last_name"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+               
+
+                cell = new PdfPCell(new Paragraph(rs.getString("DateOfBirth"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+               
+
+                cell = new PdfPCell(new Paragraph(rs.getString("Department"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("jobTitle"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("salary"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Paragraph(rs.getString("deduction_amount"), dataFont));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                table.addCell(cell);
+            
+            }
+
+            // Add table to document
+            document.add(table);
+            
+            // Close the document
+            document.close();
+
+            // Notify user of success
+             // Show success message
+            JOptionPane.showMessageDialog(null, "PDF created successfully!");
+        } catch (Exception ex) {
+            // Handle any exceptions (e.g., file errors, iText issues)
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+        }
+    
     }//GEN-LAST:event_dedmenuActionPerformed
 
     /**
