@@ -20,6 +20,9 @@ import javax.swing.JOptionPane;
  */
 public class employee extends javax.swing.JFrame {
 
+    private String Male;
+    private String Female;
+
     /**
      * Creates new form employee
      */
@@ -320,12 +323,13 @@ System.out.println("jTextField1 is null!");
        String firstname = jTextField2.getText();
        String lastname = jTextField3.getText();
         Date dateofbirth = jTextField4.getDate();
-       int gender = 0;
+       String gender = " ";
        if (jRadioButton1.isSelected()) {
-    gender = 1;  
+    gender = Male;  
 } else if (jRadioButton2.isSelected()) {
-    gender = 0;  
+    gender = Female;  
 }
+       int genderValue = gender.equals("Male") ? 0 : 1;
        String contact = jTextField8.getText();
        String address = jTextField9.getText();
        String department = jTextField5.getText();
@@ -342,7 +346,7 @@ System.out.println("jTextField1 is null!");
             ps.setString(2,firstname );
             ps.setString(3,lastname );
             ps.setDate(4, sqlDate);
-            ps.setInt(5, gender);
+            ps.setString(5, gender);
            // ps.setString(6,contact );
             if(contact.length() != 10) 
             { 
