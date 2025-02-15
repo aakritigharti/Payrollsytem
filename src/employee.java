@@ -108,12 +108,18 @@ return nextId;
         jTextField4 = new com.toedter.calendar.JDateChooser();
         jLabel13 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        jInternalFrame1.setBackground(new java.awt.Color(204, 204, 255));
         jInternalFrame1.setClosable(true);
+        jInternalFrame1.setOpaque(true);
         jInternalFrame1.setPreferredSize(new java.awt.Dimension(1200, 570));
         jInternalFrame1.setVisible(true);
         jInternalFrame1.getContentPane().setLayout(null);
@@ -275,13 +281,35 @@ return nextId;
         jInternalFrame1.getContentPane().add(jDateChooser1);
         jDateChooser1.setBounds(650, 152, 210, 40);
 
+        jLabel14.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel14.setForeground(new java.awt.Color(153, 153, 255));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
+        jLabel14.setText("jLabel14");
+        jLabel14.setOpaque(true);
+        jInternalFrame1.getContentPane().add(jLabel14);
+        jLabel14.setBounds(660, 140, 800, 540);
+
+        jLabel15.setText("jLabel15");
+        jInternalFrame1.getContentPane().add(jLabel15);
+        jLabel15.setBounds(990, 150, 45, 16);
+
+        jLabel17.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel17.setOpaque(true);
+        jInternalFrame1.getContentPane().add(jLabel17);
+        jLabel17.setBounds(0, 10, 1140, 560);
+
         getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(190, 40, 1150, 590);
+        jInternalFrame1.setBounds(190, 90, 1150, 590);
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel1.setText("Registration Of Employees");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(200, 6, 261, 40);
+        jLabel1.setBounds(200, 40, 261, 40);
+
+        jLabel16.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel16.setOpaque(true);
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(-30, -10, 1770, 830);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -448,6 +476,10 @@ System.out.println("jTextField1 is null!");
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

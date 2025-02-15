@@ -85,7 +85,7 @@ public class menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Allowance");
@@ -95,9 +95,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(560, 100, 230, 60);
+        jButton1.setBounds(540, 100, 230, 60);
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
+        jButton2.setBackground(new java.awt.Color(51, 51, 51));
         jButton2.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Update Salary");
@@ -107,9 +107,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(160, 220, 310, 60);
+        jButton2.setBounds(130, 220, 310, 60);
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
+        jButton3.setBackground(new java.awt.Color(51, 51, 51));
         jButton3.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Deduction");
@@ -119,9 +119,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(560, 220, 220, 60);
+        jButton3.setBounds(540, 220, 220, 60);
 
-        jButton4.setBackground(new java.awt.Color(102, 102, 102));
+        jButton4.setBackground(new java.awt.Color(51, 51, 51));
         jButton4.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Payment slip");
@@ -131,9 +131,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(910, 100, 230, 60);
+        jButton4.setBounds(890, 100, 230, 60);
 
-        jButton5.setBackground(new java.awt.Color(102, 102, 102));
+        jButton5.setBackground(new java.awt.Color(51, 51, 51));
         jButton5.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Search");
@@ -143,9 +143,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(1260, 90, 200, 60);
+        jButton5.setBounds(1240, 100, 200, 60);
 
-        jButton6.setBackground(new java.awt.Color(102, 102, 102));
+        jButton6.setBackground(new java.awt.Color(51, 51, 51));
         jButton6.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Report");
@@ -155,9 +155,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(900, 220, 250, 60);
+        jButton6.setBounds(890, 220, 230, 60);
 
-        jButton7.setBackground(new java.awt.Color(102, 102, 102));
+        jButton7.setBackground(new java.awt.Color(51, 51, 51));
         jButton7.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("About");
@@ -167,9 +167,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(1260, 220, 210, 60);
+        jButton7.setBounds(1240, 230, 200, 60);
 
-        jButton9.setBackground(new java.awt.Color(102, 102, 102));
+        jButton9.setBackground(new java.awt.Color(51, 51, 51));
         jButton9.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Employee Registration");
@@ -179,7 +179,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(160, 100, 310, 60);
+        jButton9.setBounds(130, 100, 310, 60);
 
         jButton8.setBackground(new java.awt.Color(0, 0, 0));
         jButton8.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
@@ -191,12 +191,14 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(1300, 490, 160, 60);
+        jButton8.setBounds(1280, 410, 160, 60);
 
-        jLabel1.setForeground(new java.awt.Color(255, 204, 204));
+        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pngwing.com (3)new.png"))); // NOI18N
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, -90, 2490, 1120);
+        jLabel1.setBounds(0, -10, 2610, 1250);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -222,8 +224,8 @@ jPopupMenu1.show(jButton6, jButton6.getWidth()/2  , jButton6.getHeight()/2  );
              try { 
     Document document = new Document();
     
-   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    String filePath = "D:\\a/Payment Slip.pdf";
+   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    //String filePath = "D:\\a/Payment Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
@@ -362,8 +364,8 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
              try { 
     Document document = new Document();
     
-   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    String filePath = "D:\\a/Payment Slip.pdf";
+   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    //String filePath = "D:\\a/Payment Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
@@ -494,8 +496,8 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
              try { 
     Document document = new Document();
     
-   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    String filePath = "D:\\a/Payment Slip.pdf";
+   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    //String filePath = "D:\\a/Payment Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();

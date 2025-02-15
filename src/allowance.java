@@ -68,7 +68,6 @@ public class allowance extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
@@ -174,11 +173,11 @@ public class allowance extends javax.swing.JFrame {
         getContentPane().add(jLabel13);
         jLabel13.setBounds(740, 450, 160, 31);
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(920, 80, 200, 40);
+        jTextField8.setBounds(920, 80, 210, 40);
         getContentPane().add(jTextField9);
-        jTextField9.setBounds(920, 140, 200, 40);
+        jTextField9.setBounds(920, 140, 210, 40);
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(920, 190, 200, 40);
+        jTextField10.setBounds(920, 190, 210, 40);
 
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,7 +192,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel14.setText("Calculated Amount:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(340, 520, 190, 24);
+        jLabel14.setBounds(340, 540, 190, 24);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -205,7 +204,7 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(267, 586, 120, 40);
+        jButton1.setBounds(270, 590, 120, 50);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -217,7 +216,7 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(510, 586, 140, 40);
+        jButton2.setBounds(510, 590, 140, 50);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -229,7 +228,7 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(788, 586, 100, 40);
+        jButton3.setBounds(790, 590, 100, 50);
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -241,26 +240,22 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(1012, 585, 120, 35);
+        jButton4.setBounds(1012, 585, 120, 50);
 
         jLabel12.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel12.setText("0.00");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(530, 520, 200, 24);
+        jLabel12.setBounds(540, 540, 140, 24);
 
         jLabel15.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel15.setText("Total Amount:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(720, 520, 150, 30);
+        jLabel15.setBounds(720, 530, 150, 30);
 
         jLabel16.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel16.setText("0.00");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(870, 520, 190, 30);
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
-        getContentPane().add(jLabel17);
-        jLabel17.setBounds(1080, 320, 1610, 780);
+        jLabel16.setBounds(880, 530, 190, 30);
 
         jLabel19.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel19.setText("Provident Fund:");
@@ -273,14 +268,14 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField13);
-        jTextField13.setBounds(920, 322, 210, 40);
+        jTextField13.setBounds(920, 320, 210, 40);
 
         jLabel18.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel18.setText("Month:");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(760, 270, 120, 23);
         getContentPane().add(jDateChooser1);
-        jDateChooser1.setBounds(918, 252, 200, 40);
+        jDateChooser1.setBounds(920, 250, 210, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -555,7 +550,6 @@ ps2.executeUpdate();
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;

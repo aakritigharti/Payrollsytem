@@ -52,6 +52,9 @@ public class updatesalary extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -216,7 +219,7 @@ public class updatesalary extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(610, 600, 110, 35);
+        jButton2.setBounds(610, 610, 110, 50);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -233,12 +236,24 @@ public class updatesalary extends javax.swing.JFrame {
         jLabel11.setBackground(new java.awt.Color(51, 102, 255));
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(1060, 320, 1790, 680);
+        jLabel11.setBounds(820, 270, 1790, 680);
 
         jLabel12.setBackground(new java.awt.Color(204, 204, 255));
         jLabel12.setOpaque(true);
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(0, 20, 1790, 840);
+        jLabel12.setBounds(0, -20, 1790, 880);
+
+        jLabel13.setText("jLabel13");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(-30, 500, 400, 230);
+
+        jLabel14.setText("jLabel14");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(240, 640, 45, 16);
+
+        jLabel15.setText("jLabel15");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(120, 540, 240, 160);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -416,6 +431,9 @@ public class updatesalary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
