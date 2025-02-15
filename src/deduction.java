@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 /*
@@ -68,9 +69,13 @@ public class deduction extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -93,17 +98,17 @@ public class deduction extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel4.setText("Department:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(787, 119, 130, 38);
+        jLabel4.setBounds(780, 110, 130, 38);
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel5.setText("Job Title:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(810, 190, 120, 37);
+        jLabel5.setBounds(780, 160, 120, 37);
 
         jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel6.setText(" Basic Salary:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(790, 260, 140, 34);
+        jLabel6.setBounds(760, 210, 140, 34);
 
         jLabel7.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel7.setText("Employee ID:");
@@ -141,7 +146,7 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jTextField4);
         jTextField4.setBounds(410, 320, 240, 40);
         getContentPane().add(jTextField5);
-        jTextField5.setBounds(920, 120, 250, 40);
+        jTextField5.setBounds(910, 100, 250, 40);
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,9 +154,9 @@ public class deduction extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(920, 180, 260, 40);
+        jTextField6.setBounds(910, 150, 260, 40);
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(925, 250, 270, 40);
+        jTextField7.setBounds(910, 200, 270, 40);
 
         jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel8.setText("Deducted by:");
@@ -195,22 +200,22 @@ public class deduction extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setText("Total Deduction:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(770, 380, 160, 31);
+        jLabel11.setBounds(1070, 500, 160, 31);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setText("0.00");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(1000, 330, 90, 31);
+        jLabel12.setBounds(1290, 460, 140, 31);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setText("Salary After Deduction:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(770, 330, 210, 32);
+        jLabel13.setBounds(1060, 460, 210, 32);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setText("0.00");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(1000, 380, 56, 32);
+        jLabel14.setBounds(1290, 500, 140, 32);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -278,21 +283,37 @@ public class deduction extends javax.swing.JFrame {
         getContentPane().add(jTextField8);
         jTextField8.setBounds(405, 43, 710, 40);
 
-        jLabel17.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
-        jLabel17.setOpaque(true);
-        getContentPane().add(jLabel17);
-        jLabel17.setBounds(1060, 220, 2180, 970);
-
-        jLabel16.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel16.setOpaque(true);
-        getContentPane().add(jLabel16);
-        jLabel16.setBounds(0, 0, 1510, 840);
-
         jLabel18.setBackground(new java.awt.Color(204, 204, 255));
         jLabel18.setOpaque(true);
         getContentPane().add(jLabel18);
         jLabel18.setBounds(740, 0, 790, 30);
+
+        jLabel19.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jLabel19.setText("Provident Fund:");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(750, 330, 150, 23);
+
+        jLabel20.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jLabel20.setText("CIF:");
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(800, 400, 60, 23);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(910, 320, 270, 40);
+        getContentPane().add(jTextField9);
+        jTextField9.setBounds(910, 390, 270, 40);
+        getContentPane().add(jDateChooser1);
+        jDateChooser1.setBounds(910, 262, 270, 40);
+
+        jLabel16.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jLabel16.setText("Month:");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(763, 270, 120, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -324,6 +345,17 @@ public class deduction extends javax.swing.JFrame {
              ResultSet rs = null;
         int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?", "Add Record", JOptionPane.YES_NO_OPTION);
         if (p==0){
+            java.util.Date utilDate = jDateChooser1.getDate(); 
+           /* Calendar cal = Calendar.getInstance();
+cal.setTime(utilDate);
+
+// Extract Month and Year
+int selectedYear = cal.get(Calendar.YEAR);
+int selectedMonth = cal.get(Calendar.MONTH) + 1; // Months are 0-based, so add 1
+
+// Format as "YYYY-MM"
+String formattedDate = selectedYear + "-" + (selectedMonth < 10 ? "0" + selectedMonth : selectedMonth);*/
+              java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime()); 
             try {
     String updateDeductionQuery = "UPDATE deductions SET deduction_amount = deduction_amount + ? WHERE id = ? AND deduction_id = ?";
     ps = db.connect().prepareStatement(updateDeductionQuery);
@@ -333,14 +365,17 @@ public class deduction extends javax.swing.JFrame {
     int rowsUpdated = ps.executeUpdate();
 
     if (rowsUpdated == 0) {
-        String insertQuery = "INSERT INTO deductions (deduction_id, first_name, surname, salary, deduction_amount, id) VALUES (?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO `deductions`(`deduction_id`, `first_name`, `surname`, `salary`, `Month`, `provident_fund`, `cif`, `deduction_amount`, `id`) VALUES (?,?,?,?,?,?,?,?,?)";
         ps = db.connect().prepareStatement(insertQuery);
         ps.setInt(1, Integer.parseInt(jTextField.getText())); 
         ps.setString(2, jTextField2.getText()); 
         ps.setString(3, jTextField3.getText()); 
         ps.setDouble(4, Double.parseDouble(jTextField7.getText())); 
-        ps.setDouble(5, Double.parseDouble(jLabel14.getText())); 
-        ps.setInt(6, Integer.parseInt(jTextField.getText())); 
+        ps.setDate(5, sqlDate);
+        ps.setDouble(6, Double.parseDouble(jTextField1.getText())); 
+        ps.setDouble(7, Double.parseDouble(jTextField9.getText())); 
+        ps.setDouble(8, Double.parseDouble(jLabel14.getText())); 
+        ps.setInt(9, Integer.parseInt(jTextField.getText())); 
         ps.executeUpdate();
     }
 
@@ -349,6 +384,17 @@ public class deduction extends javax.swing.JFrame {
     ps = db.connect().prepareStatement(salaryQuery);
     ps.setInt(1, Integer.parseInt(jTextField.getText())); 
     rs = ps.executeQuery();
+    String updateSalaryQuery1 = "INSERT INTO salary_records (employee_id, record_date, deductions) " +
+                            "VALUES (?, ?, ?) " +
+                            "ON DUPLICATE KEY UPDATE deductions = ?";
+ 
+PreparedStatement ps2 = db.connect().prepareStatement(updateSalaryQuery1);
+ps2.setInt(1, Integer.parseInt(jTextField.getText()));
+//java.sql.Date sqlDate = java.sql.Date.valueOf(formattedDate + "-01"); 
+ps2.setDate(2, sqlDate);
+ps2.setDouble(3, Double.parseDouble(jLabel14.getText()));
+ps2.setDouble(4, Double.parseDouble(jLabel14.getText()));
+ps2.executeUpdate();
 
     if (rs.next()) {
         double currentSalary = rs.getDouble("salary");
@@ -409,6 +455,12 @@ public class deduction extends javax.swing.JFrame {
             jTextField6.setText(rs.getString("jobtitle"));
             jTextField7.setText(rs.getString("salary"));
             jTextField5.setText(rs.getString("department"));
+            
+
+            
+            
+            
+            
         } else {
             JOptionPane.showMessageDialog(null, "No record found");
         }
@@ -438,19 +490,29 @@ public class deduction extends javax.swing.JFrame {
         // TODO add your handling code here:
 PreparedStatement ps = null;
         int salary = Integer.parseInt(jTextField7.getText()); 
+          double Total_pf = 0.1*salary;
+          String xs= String.format("%.2f", Total_pf);
+          jTextField1.setText(xs);
+          
+          double Total_ci =  0.11*salary;
+          String xpa= String.format("%.2f", Total_ci);
+          jTextField9.setText(xpa);
+   
             if(r_percentage.isSelected() == true ){ 
         int percent = Integer.parseInt(txt_deduction.getText());
-        int calcpercent = salary/100 * percent;
+        double calcpercent = salary/100 * percent+ Total_pf + Total_ci;
         String xp = String.valueOf(calcpercent);
-        int sal = salary - calcpercent;
         jLabel14.setText(xp);
-        jLabel12.setText(String.valueOf(sal));
+        double sal = salary - calcpercent;
+        //String f = String.format("%.4f", sal);
+        jLabel12.setText(String.format("%.2f", sal));
             }
              if(r_amount.isSelected() == true ){    
-        int getamt = Integer.parseInt(txt_percentage.getText());
+        int getam = Integer.parseInt(txt_percentage.getText());
+        double getamt = getam + Total_pf + Total_ci; 
          String xa = String.valueOf(getamt);
-         int calcamt = salary - getamt;
          jLabel14.setText(xa);
+         double calcamt = salary - getamt;
         jLabel12.setText(String.valueOf(calcamt));
         }
         try{
@@ -484,12 +546,15 @@ PreparedStatement ps = null;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         jTextField.setText("");
+        jTextField1.setText("");
+        jTextField9.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
         jTextField4.setText("");
         jTextField5.setText("");
         r_percentage.setSelected(false);
         r_amount.setSelected(false);
+        jDateChooser1.setDate(null);
         jTextField6.setText("");
         jTextField7.setText("");
         jTextField8.setText("");
@@ -503,6 +568,10 @@ PreparedStatement ps = null;
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -544,6 +613,7 @@ PreparedStatement ps = null;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -552,9 +622,10 @@ PreparedStatement ps = null;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -563,6 +634,7 @@ PreparedStatement ps = null;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -570,6 +642,7 @@ PreparedStatement ps = null;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JRadioButton r_amount;
     private javax.swing.JRadioButton r_percentage;
     private javax.swing.JTextField txt_deduction;

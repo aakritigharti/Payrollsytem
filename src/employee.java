@@ -103,6 +103,8 @@ return nextId;
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jTextField4 = new com.toedter.calendar.JDateChooser();
+        jLabel13 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -183,7 +185,7 @@ return nextId;
         jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel9.setText("Basic Salary:");
         jInternalFrame1.getContentPane().add(jLabel9);
-        jLabel9.setBounds(490, 150, 150, 38);
+        jLabel9.setBounds(480, 220, 150, 38);
 
         jLabel10.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel10.setText("Department:");
@@ -200,7 +202,7 @@ return nextId;
             }
         });
         jInternalFrame1.getContentPane().add(jTextField6);
-        jTextField6.setBounds(650, 150, 210, 40);
+        jTextField6.setBounds(650, 210, 210, 40);
         jInternalFrame1.getContentPane().add(jTextField7);
         jTextField7.setBounds(650, 90, 210, 40);
 
@@ -263,6 +265,13 @@ return nextId;
         jInternalFrame1.getContentPane().add(jTextField4);
         jTextField4.setBounds(160, 210, 210, 40);
 
+        jLabel13.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jLabel13.setText(" Join Date:");
+        jInternalFrame1.getContentPane().add(jLabel13);
+        jLabel13.setBounds(480, 160, 120, 23);
+        jInternalFrame1.getContentPane().add(jDateChooser1);
+        jDateChooser1.setBounds(650, 152, 210, 40);
+
         getContentPane().add(jInternalFrame1);
         jInternalFrame1.setBounds(190, 40, 1150, 590);
 
@@ -294,6 +303,7 @@ return nextId;
         jTextField6.setText("");
         jRadioButton1.setSelected(false);
         jRadioButton2.setSelected(false);
+        jDateChooser1.setDate(null);
         jTextField7.setText("");
         jTextField8.setText("");
         jTextField9.setText("");
@@ -330,10 +340,12 @@ System.out.println("jTextField1 is null!");
        String address = jTextField9.getText();
        String department = jTextField5.getText();
        String jobtitle = jTextField7.getText();
+       Date dateofjoin = jDateChooser1.getDate();
        String salary = jTextField6.getText();
        java.sql.Date sqlDate = new java.sql.Date(dateofbirth.getTime());
+       java.sql.Date sqlJoinDate = new java.sql.Date(dateofjoin.getTime());
        PreparedStatement ps;
-       String query = "INSERT INTO `empregister`( `id`, `firstname`, `lastname`, `dateofbirth`, `gender`, `contact`, `address`, `department`, `jobtitle`, `salary`) VALUES ( ?,?,?,?,?,?,?,?,?,?)";
+       String query = "INSERT INTO `empregister`( `id`, `firstname`, `lastname`, `dateofbirth`, `gender`, `contact`, `address`, `department`, `jobtitle`,`datejoin`, `salary`) VALUES ( ?,?,?,?,?,?,?,?,?,?,?)";
        
         try {
             
@@ -353,7 +365,8 @@ System.out.println("jTextField1 is null!");
             ps.setString(7,address);
             ps.setString(8,department );
             ps.setString(9,jobtitle );
-            ps.setString(10,salary );
+            ps.setDate(10, sqlJoinDate);
+            ps.setString(11,salary );
             int affectedRows = ps.executeUpdate();
             if (affectedRows > 0) { 
              try (ResultSet generatedKeys = ps.getGeneratedKeys()) { 
@@ -424,11 +437,13 @@ System.out.println("jTextField1 is null!");
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

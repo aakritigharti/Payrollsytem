@@ -1,8 +1,10 @@
 
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -70,7 +72,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -274,11 +276,11 @@ public class allowance extends javax.swing.JFrame {
         jTextField13.setBounds(920, 322, 210, 40);
 
         jLabel18.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
-        jLabel18.setText("CIF:");
+        jLabel18.setText("Month:");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(760, 270, 120, 23);
-        getContentPane().add(jTextField14);
-        jTextField14.setBounds(920, 252, 200, 40);
+        getContentPane().add(jDateChooser1);
+        jDateChooser1.setBounds(918, 252, 200, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -299,6 +301,8 @@ public class allowance extends javax.swing.JFrame {
         jTextField5.setText("");
         jTextField6.setText("");
         jTextField7.setText("");
+        jTextField13.setText("");
+        jDateChooser1.setDate(null);
         jTextField8.setText("");
         jTextField9.setText("");
         jTextField10.setText("");
@@ -357,7 +361,18 @@ public class allowance extends javax.swing.JFrame {
                     int p= JOptionPane.showConfirmDialog(null, "Are you sure you want to add record?", "Add Record", JOptionPane.YES_NO_OPTION);
                     if (p==0){
                      try{   
+                          java.util.Date utilDate = jDateChooser1.getDate(); 
+                          /*Calendar cal = Calendar.getInstance();
+cal.setTime(utilDate);
 
+// Extract Month and Year
+int selectedYear = cal.get(Calendar.YEAR);
+int selectedMonth = cal.get(Calendar.MONTH) + 1; // Months are 0-based, so add 1
+
+// Format as "YYYY-MM"
+       String formattedDate = selectedYear + "-" + (selectedMonth < 10 ? "0" + selectedMonth : selectedMonth);
+       java.sql.Date sqlDate = java.sql.Date.valueOf(formattedDate);*/
+                        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime()); 
                         String updateallowanceQuery = "UPDATE allowance SET TotalAmount = TotalAmount + ? WHERE id = ? AND allowance_id = ?";
                         ps = db.connect().prepareStatement(updateallowanceQuery);
                         ps.setDouble(1, Double.parseDouble(jLabel16.getText())); 
@@ -366,8 +381,8 @@ public class allowance extends javax.swing.JFrame {
     int rowsUpdated = ps.executeUpdate();
 
     if (rowsUpdated == 0) {
-        
-                        String query = "INSERT INTO `allowance`(`allowance_id`, `first_name`, `last_name`, `salary`, `Department`, `Overtime`, `Bonus`, `Other`, `TotalOvertime`, `RatePerHour`, `Calculated amt`, `TotalAmount`, `id`)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                          
+                        String query = "INSERT INTO `allowance`(`allowance_id`, `first_name`, `last_name`, `salary`, `Department`, `Overtime`, `Bonus`, `Other`, `Month`, `TotalOvertime`, `RatePerHour`, `Calculated amt`, `TotalAmount`, `id`)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                          
                            ps = db.connect().prepareStatement(query);
                            ps.setInt(1, Integer.parseInt(jTextField2.getText())); 
@@ -378,17 +393,34 @@ public class allowance extends javax.swing.JFrame {
                            ps.setDouble(6, Double.parseDouble(jTextField8.getText())); 
                            ps.setDouble(7, Double.parseDouble(jTextField9.getText())); 
                            ps.setDouble(8, Double.parseDouble(jTextField10.getText())); 
-                           ps.setDouble(9, Double.parseDouble(jTextField11.getText()));
-                           ps.setDouble(10, Double.parseDouble(jTextField12.getText())); 
-                           ps.setDouble(11, Double.parseDouble(jLabel12.getText())); 
-                           ps.setDouble(12, Double.parseDouble(jLabel16.getText()));
-                           ps.setInt(13, Integer.parseInt(jTextField2.getText())); 
+                           ps.setDate(9, sqlDate);
+                          // ps.setDate(9, new  java.sql.Date(jDateChooser1.getDate().getTime()));
+                           ps.setDouble(10, Double.parseDouble(jTextField11.getText()));
+                           ps.setDouble(11, Double.parseDouble(jTextField12.getText())); 
+                           ps.setDouble(12, Double.parseDouble(jLabel12.getText())); 
+                           ps.setDouble(13, Double.parseDouble(jLabel16.getText()));
+                           ps.setInt(14, Integer.parseInt(jTextField2.getText())); 
                            ps.execute();
                           }
-                               String salaryQuery = "SELECT salary FROM empregister WHERE id = ?";
+                        String salaryQuery = "SELECT salary FROM empregister WHERE id = ?";
                                ps = db.connect().prepareStatement(salaryQuery);
                                ps.setInt(1, Integer.parseInt(jTextField2.getText())); 
                                rs = ps.executeQuery();
+                        String updateSalaryQuery1 = "INSERT INTO salary_records (employee_id, record_date, allowance) " +
+                            "VALUES (?, ?, ?) " +
+                            "ON DUPLICATE KEY UPDATE allowance = ?"; 
+PreparedStatement ps2 = db.connect().prepareStatement(updateSalaryQuery1);
+ps2.setInt(1, Integer.parseInt(jTextField2.getText()));
+//java.sql.Date sqlDate = java.sql.Date.valueOf(formattedDate + "-01"); 
+ps2.setDate(2, sqlDate);
+//ps2.setString(2, formattedDate);
+ps2.setDouble(3, Double.parseDouble(jLabel12.getText()));
+ps2.setDouble(4, Double.parseDouble(jLabel12.getText()));
+ps2.executeUpdate();
+                               
+                               
+                               
+                               
                     if (rs.next()) {
         double currentSalary = rs.getDouble("salary");
         double allowanceAmount = Double.parseDouble(jLabel16.getText()); 
@@ -437,7 +469,7 @@ public class allowance extends javax.swing.JFrame {
           
           double Total_ci =  0.11*salary;
           String xp= String.valueOf(Total_ci);
-          jTextField14.setText(xp);
+          //jTextField14.setText(xp);
           
           dbop= salary/ days/eight;
           String s= String.valueOf(dbop);
@@ -448,7 +480,7 @@ public class allowance extends javax.swing.JFrame {
           int bonus = Integer.parseInt(jTextField9.getText());
           int other = Integer.parseInt(jTextField10.getText());
           int c = bonus+other;
-          double calc =Total_Overtime* dbop+c - Total_pf - Total_ci;
+          double calc =Total_Overtime* dbop+c ;
           String f = String.format("%.4f", calc);
           jLabel12.setText(f);
           
@@ -514,6 +546,7 @@ public class allowance extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -538,7 +571,6 @@ public class allowance extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

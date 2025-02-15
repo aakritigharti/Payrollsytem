@@ -17,6 +17,7 @@ import com.itextpdf.text.pdf.PdfWriter;
  */
 public class about extends javax.swing.JFrame { 
          String FILE_NAME = "D:\\Payroll Management\\Payrollsytem/termsandcondition.txt";
+          
 
     /**
      * Creates new form about
@@ -135,6 +136,7 @@ public class about extends javax.swing.JFrame {
     try {
         Document document = new Document();
         String filePath = "D:\\a/termsAndConditions.pdf";
+//String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/termsandcondition.txt";
         PdfWriter.getInstance(document, new FileOutputStream(filePath));
         document.open();
         Font normalFont = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL);
@@ -154,9 +156,7 @@ public class about extends javax.swing.JFrame {
             "6. Penalties and Incentives:", 
             "7. Compliance:",
              "Employee Name:_____________________________",
-
 "Employee Signature:__________________________",
-
 "Date:______________________________________"
         };
 
