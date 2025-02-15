@@ -222,8 +222,8 @@ jPopupMenu1.show(jButton6, jButton6.getWidth()/2  , jButton6.getHeight()/2  );
              try { 
     Document document = new Document();
     
-   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    //String filePath = "D:\\a/Payment Slip.pdf";
+   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    String filePath = "D:\\a/Payment Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
@@ -362,8 +362,8 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
              try { 
     Document document = new Document();
     
-   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    //String filePath = "D:\\a/Payment Slip.pdf";
+   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    String filePath = "D:\\a/Payment Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
@@ -443,13 +443,13 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 table.addCell(cell);
 
-                cell = new PdfPCell(new Paragraph(rs.getString("CIF"), dataFont));
+                /*cell = new PdfPCell(new Paragraph(rs.getString("CIF"), dataFont));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
                 table.addCell(cell);
 
                 cell = new PdfPCell(new Paragraph(rs.getString("ProvidentFund"), dataFont));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                table.addCell(cell);
+                table.addCell(cell);*/
                 
                 cell = new PdfPCell(new Paragraph(rs.getString("TotalOvertime"), dataFont));
                 cell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -494,8 +494,8 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
              try { 
     Document document = new Document();
     
-   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    //String filePath = "D:\\a/Payment Slip.pdf";
+   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    String filePath = "D:\\a/Payment Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
