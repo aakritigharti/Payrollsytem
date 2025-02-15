@@ -15,13 +15,8 @@ import com.itextpdf.text.pdf.PdfWriter;
  *
  * @author User
  */
-public class about extends javax.swing.JFrame {
- //private static final 
+public class about extends javax.swing.JFrame { 
          String FILE_NAME = "D:\\Payroll Management\\Payrollsytem/termsandcondition.txt";
- 
- //private JTextPane jTextPane1;
- 
-  //private static final String PDF_FILE_NAME = "D:\\a/termsAndConditions.pdf";
 
     /**
      * Creates new form about
