@@ -119,7 +119,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(540, 220, 220, 60);
+        jButton3.setBounds(540, 220, 230, 60);
 
         jButton4.setBackground(new java.awt.Color(51, 51, 51));
         jButton4.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N

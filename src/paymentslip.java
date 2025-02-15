@@ -59,6 +59,7 @@ public class paymentslip extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -161,14 +162,19 @@ public class paymentslip extends javax.swing.JFrame {
         jButton3.setBounds(870, 420, 130, 62);
 
         jLabel8.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/5.jpg"))); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(1060, 280, 830, 860);
 
         jLabel9.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
         jLabel9.setOpaque(true);
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 0, 1540, 860);
+        jLabel9.setBounds(890, 280, 1490, 820);
+
+        jLabel10.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel10.setOpaque(true);
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(-7, 0, 1540, 1010);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -403,6 +409,7 @@ document.add(new Paragraph("----------------------------------------------------
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

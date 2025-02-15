@@ -36,6 +36,7 @@ public class allowance extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -72,6 +73,13 @@ public class allowance extends javax.swing.JFrame {
         jTextField13 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+
+        jLabel17.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
+        jLabel17.setOpaque(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -151,33 +159,33 @@ public class allowance extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel8.setText("Overtime:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(760, 90, 110, 30);
+        jLabel8.setBounds(760, 100, 110, 30);
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel9.setText("Bonus:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(760, 140, 130, 40);
+        jLabel9.setBounds(760, 150, 130, 40);
 
         jLabel10.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel10.setText("Other:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(760, 200, 100, 28);
+        jLabel10.setBounds(760, 220, 100, 28);
 
         jLabel11.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel11.setText("Total Overtime:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(730, 390, 150, 30);
+        jLabel11.setBounds(750, 400, 150, 30);
 
         jLabel13.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel13.setText("Rate Per Hour:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(740, 450, 160, 31);
+        jLabel13.setBounds(750, 460, 160, 31);
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(920, 80, 210, 40);
+        jTextField8.setBounds(920, 90, 210, 40);
         getContentPane().add(jTextField9);
-        jTextField9.setBounds(920, 140, 210, 40);
+        jTextField9.setBounds(920, 150, 210, 40);
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(920, 190, 210, 40);
+        jTextField10.setBounds(920, 210, 210, 40);
 
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,9 +193,9 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField11);
-        jTextField11.setBounds(920, 380, 210, 40);
+        jTextField11.setBounds(920, 400, 210, 40);
         getContentPane().add(jTextField12);
-        jTextField12.setBounds(920, 440, 210, 40);
+        jTextField12.setBounds(920, 460, 210, 40);
 
         jLabel14.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel14.setText("Calculated Amount:");
@@ -260,7 +268,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel19.setText("Provident Fund:");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(730, 340, 170, 23);
+        jLabel19.setBounds(750, 340, 170, 23);
 
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,14 +276,30 @@ public class allowance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField13);
-        jTextField13.setBounds(920, 320, 210, 40);
+        jTextField13.setBounds(920, 330, 210, 40);
 
         jLabel18.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
         jLabel18.setText("Month:");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(760, 270, 120, 23);
+        jLabel18.setBounds(760, 290, 120, 23);
         getContentPane().add(jDateChooser1);
-        jDateChooser1.setBounds(920, 250, 210, 40);
+        jDateChooser1.setBounds(920, 270, 210, 40);
+
+        jLabel21.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel21.setOpaque(true);
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(-17, -4, 1010, 810);
+
+        jLabel22.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
+        jLabel22.setOpaque(true);
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(980, 160, 770, 740);
+
+        jLabel20.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel20.setOpaque(true);
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(990, -10, 670, 180);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -550,9 +574,13 @@ ps2.executeUpdate();
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

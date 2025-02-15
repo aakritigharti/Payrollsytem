@@ -361,7 +361,7 @@ System.out.println("jTextField1 is null!");
        String firstname = jTextField2.getText();
        String lastname = jTextField3.getText();
         Date dateofbirth = jTextField4.getDate();
-       String gender = " ";
+       String gender = null;
        if (jRadioButton1.isSelected()) {
     gender = Male;  
 } else if (jRadioButton2.isSelected()) {
