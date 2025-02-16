@@ -31,7 +31,8 @@ public class History extends javax.swing.JFrame {
          PreparedStatement ps = null;
              ResultSet rs = null;
     try {
-        String sql = "SELECT e.id AS employee_id, CONCAT(e.firstname, ' ', e.lastname) AS employee_name, " +
+        String sql =//"SELECT * FROM `salary_records` WHERE e.id =?"; 
+                "SELECT e.id AS employee_id, CONCAT(e.firstname, ' ', e.lastname) AS employee_name, " +
                      "IFNULL(s.record_date, CURDATE()) AS record_date, e.salary AS base_salary, " +
                      "IFNULL(s.allowance, 0) AS total_allowance, IFNULL(s.deductions, 0) AS total_deductions, " +
                      "(e.salary + IFNULL(s.allowance, 0) - IFNULL(s.deductions, 0)) AS final_salary " +
@@ -94,7 +95,15 @@ public class History extends javax.swing.JFrame {
             new String [] {
                 "Employee Name", "Date", "Salary", "Allowance", "Deduction"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
@@ -111,11 +120,13 @@ public class History extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

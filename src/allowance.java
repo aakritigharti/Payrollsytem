@@ -483,7 +483,7 @@ ps2.executeUpdate();
           jTextField11.setText(x);
           
           double Total_pf = 0.1*salary;
-          String xs= String.valueOf(Total_pf);
+          String xs= String.format("%.2f", Total_pf);
           jTextField13.setText(xs);
           
           double Total_ci =  0.11*salary;

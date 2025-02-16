@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class updatesalary extends javax.swing.JFrame {
 
     /**
-     * Creates new form Updatesalary
+     * Creates new form updatesalary
      */
     public updatesalary() {
         initComponents();
