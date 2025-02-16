@@ -367,7 +367,7 @@ System.out.println("jTextField1 is null!");
 } else if (jRadioButton2.isSelected()) {
     gender = Female;  
 }
-       int genderValue = gender.equals("Male") ? 0 : 1;
+       //int genderValue = gender.equals("Male") ? 0 : 1;
        String contact = jTextField8.getText();
        String address = jTextField9.getText();
        String department = jTextField5.getText();

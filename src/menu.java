@@ -224,8 +224,8 @@ jPopupMenu1.show(jButton6, jButton6.getWidth()/2  , jButton6.getHeight()/2  );
              try { 
     Document document = new Document();
     
-   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    //String filePath = "D:\\a/Payment Slip.pdf";
+   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    String filePath = "D:\\a/Employee Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
@@ -364,8 +364,8 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
              try { 
     Document document = new Document();
     
-   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    //String filePath = "D:\\a/Payment Slip.pdf";
+   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    String filePath = "D:\\a/Allowance Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();
@@ -496,8 +496,8 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
              try { 
     Document document = new Document();
     
-   String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
-    //String filePath = "D:\\a/Payment Slip.pdf";
+   //String filePath = "C:\\Users\\ACER\\OneDrive\\Desktop\\Project PDF/GeneratedPDF.pdf";
+    String filePath = "D:\\a/Deduction Slip.pdf";
                  
 PdfWriter.getInstance(document, new FileOutputStream(filePath));
  document.open();

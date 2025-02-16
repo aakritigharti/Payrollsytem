@@ -16,7 +16,7 @@ import com.itextpdf.text.pdf.PdfWriter;
  * @author User
  */
 public class about extends javax.swing.JFrame { 
-         String FILE_NAME = "D:\\Payroll Management\\Payrollsytem/termsandcondition.txt";
+         String FILE_NAME = "D:\\Payrollsytem/termsandcondition.txt";
           
 
     /**

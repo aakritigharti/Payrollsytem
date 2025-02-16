@@ -7,7 +7,7 @@ Allowance Rate: Starting salary will be Rs.35000 for each employee. However sala
 Overtime Rate: Overtime is compensated at a rate of 1.5 times the regular hourly rate.
 
 2. Payroll Calculation
-Payroll Period: The standard payroll period is 28 days.
+Payroll Period: The standard payroll period is 25 days.
 Daily Basic Pay (DBP): Daily Basic Pay is calculated by dividing the employee's salary by the number of days in the payroll period and the allowance factor.
 Overtime Calculation: The total overtime compensation is determined by multiplying the number of overtime hours worked by the overtime rate of 1.5.
 

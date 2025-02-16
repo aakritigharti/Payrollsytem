@@ -373,7 +373,7 @@ String formattedDate = selectedYear + "-" + (selectedMonth < 10 ? "0" + selected
     int rowsUpdated = ps.executeUpdate();
 
     if (rowsUpdated == 0) {
-        String insertQuery = "INSERT INTO `deductions`(`deduction_id`, `first_name`, `surname`, `salary`, `Month`, `provident_fund`, `cif`, `deduction_amount`, `id`) VALUES (?,?,?,?,?,?,?,?,?)";
+        String insertQuery = "INSERT INTO `deductions`(`deduction_id`, `first_name`, `last_name`, `salary`, `Month`, `provident_fund`, `cif`, `deduction_amount`, `id`) VALUES (?,?,?,?,?,?,?,?,?)";
         ps = db.connect().prepareStatement(insertQuery);
         ps.setInt(1, Integer.parseInt(jTextField.getText())); 
         ps.setString(2, jTextField2.getText()); 
