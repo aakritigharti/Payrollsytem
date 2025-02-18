@@ -78,7 +78,7 @@ public class deduction extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
@@ -321,7 +321,7 @@ public class deduction extends javax.swing.JFrame {
         jLabel18.setBackground(new java.awt.Color(204, 204, 255));
         jLabel18.setOpaque(true);
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(-10, -10, 1560, 860);
+        jLabel18.setBounds(0, 0, 1560, 860);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

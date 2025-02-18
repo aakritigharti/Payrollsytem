@@ -82,7 +82,7 @@ public class menu extends javax.swing.JFrame {
         });
         jPopupMenu1.add(dedmenu);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
@@ -198,7 +198,7 @@ public class menu extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pngwing.com (3)new.png"))); // NOI18N
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -10, 2610, 1250);
+        jLabel1.setBounds(0, 0, 2610, 1250);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -242,7 +242,7 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
             table.setSpacingBefore(10f); // Add some spacing before the table
             table.setSpacingAfter(10f);
             
-             float[] columnWidths = {1f, 2f, 2f, 3f, 2f, 1.5f, 2.5f, 2.5f, 2f, 2f};
+             float[] columnWidths = {1f, 2f, 2f, 3f, 2f, 1.5f, 2.5f, 2.5f, 2f, 2.5f};
             table.setWidths(columnWidths);
 
             // Add table headers
@@ -377,12 +377,12 @@ PdfWriter.getInstance(document, new FileOutputStream(filePath));
 
     
       // Create a table with appropriate number of columns
-            PdfPTable table = new PdfPTable(14); // Adjust column count based on your data
+            PdfPTable table = new PdfPTable(12); // Adjust column count based on your data
             table.setWidthPercentage(110); // Make the table occupy full width
             table.setSpacingBefore(10f); // Add some spacing before the table
             table.setSpacingAfter(10f);
             
-             float[] columnWidths = {1f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f,2f};
+             float[] columnWidths = {1f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f,};
             table.setWidths(columnWidths);
 
             // Add table headers

@@ -97,7 +97,7 @@ public class login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(1190, 500, 83, 39);
+        jButton2.setBounds(1160, 500, 83, 39);
 
         jLabel4.setBackground(new java.awt.Color(51, 102, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Payroll-Banner.png"))); // NOI18N
@@ -113,7 +113,7 @@ public class login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(770, -10, 740, 1010);
+        jPanel1.setBounds(770, -20, 780, 1020);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         getContentPane().add(jPanel2);

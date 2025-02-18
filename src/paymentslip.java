@@ -61,7 +61,7 @@ public class paymentslip extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
@@ -163,7 +163,7 @@ public class paymentslip extends javax.swing.JFrame {
 
         jLabel8.setBackground(new java.awt.Color(204, 204, 255));
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(1060, 280, 830, 860);
+        jLabel8.setBounds(1050, 260, 830, 860);
 
         jLabel9.setBackground(new java.awt.Color(204, 204, 255));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
@@ -174,7 +174,7 @@ public class paymentslip extends javax.swing.JFrame {
         jLabel10.setBackground(new java.awt.Color(204, 204, 255));
         jLabel10.setOpaque(true);
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(-7, 0, 1540, 1010);
+        jLabel10.setBounds(-10, 0, 1540, 1010);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

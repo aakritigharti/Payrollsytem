@@ -56,7 +56,7 @@ public class updatesalary extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
@@ -241,7 +241,7 @@ public class updatesalary extends javax.swing.JFrame {
         jLabel12.setBackground(new java.awt.Color(204, 204, 255));
         jLabel12.setOpaque(true);
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(0, -20, 1790, 880);
+        jLabel12.setBounds(0, 0, 1790, 880);
 
         jLabel13.setText("jLabel13");
         getContentPane().add(jLabel13);

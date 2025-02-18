@@ -81,7 +81,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kdjhgjhsg.png"))); // NOI18N
         jLabel17.setOpaque(true);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
@@ -299,7 +299,7 @@ public class allowance extends javax.swing.JFrame {
         jLabel20.setBackground(new java.awt.Color(204, 204, 255));
         jLabel20.setOpaque(true);
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(990, -10, 670, 180);
+        jLabel20.setBounds(980, 0, 670, 180);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -70,7 +70,7 @@ public class search extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
         getContentPane().add(filler1);
         filler1.setBounds(111, 123, 0, 0);
@@ -285,7 +285,7 @@ public class search extends javax.swing.JFrame {
         jLabel14.setBackground(new java.awt.Color(204, 204, 255));
         jLabel14.setOpaque(true);
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(0, 0, 1700, 860);
+        jLabel14.setBounds(-10, 0, 1700, 860);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -418,6 +418,10 @@ public class search extends javax.swing.JFrame {
                 ps.executeUpdate();
                          String updatededQuery = "DELETE FROM deductions WHERE id = ? ";
                         ps = db.connect().prepareStatement(updatededQuery);
+                        ps.setInt(1, Integer.parseInt(jTextField2.getText()));
+                ps.executeUpdate();
+                String salaryupdatededQuery = "DELETE FROM salary_records WHERE employee_id = ? ";
+                        ps = db.connect().prepareStatement(salaryupdatededQuery);
                         ps.setInt(1, Integer.parseInt(jTextField2.getText()));
                 ps.executeUpdate();
          String updateempregisterQuery = "DELETE FROM empregister WHERE id = ? ";
